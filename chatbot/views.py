@@ -14,10 +14,28 @@ import random
 import pprint
 # Create your views here.
 
+from dashboard.models import Messages
 
 VERIFY_TOKEN = '7thseptember2016'
 PAGE_ACCESS_TOKEN = 'EAANMp2y1xZCcBAM9YvGljkE3CJKyGqw7xtkGc5PHWvZBKMXBZAsEzsYJ3ZAvDqBUEIadRVM57ZBZCcBEowWyuvM2kSvVpuPfPQwK2PHuEx0Xq4X0PUZAcZAokx8biJiPR4XntyHo22GfaCKSozgYWyX8i6wADbAAJiC2KJuZCr27hUAZDZD'
 
+def save_message(fbid='1129928563722136',message_text='hi'):
+    url = 'https://graph.facebook.com/v2.6/%s?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=%s'%(fbid,PAGE_ACCESS_TOKEN)
+    print url
+    resp = requests.get(url=url)
+    data = json.loads(resp.text)
+
+    name = '%s %s'%(data['first_name'],data['last_name'])
+    p = Messages.objects.get_or_create(name=name,
+      profile_url = data['profile_pic'],
+      fb_id = fbid,
+      gender = data['gender'],
+      locale = data['locale'],
+      message = message_text
+      )[0]
+    p.save()
+
+    return json.dumps(data)
 
 def scrape_spreadsheet():
     sheet_id = '1EXwvmdQV4WaMXtL4Ucn3kwwhS1GOMFu0Nh9ByVCfrxk'
@@ -60,7 +78,7 @@ def set_greeting_text():
 def index(request):
     #set_menu()
     handle_postback('fbid','MENU_CALL')
-    post_facebook_message('asd','asdasd')
+    post_facebook_message('1129928563722136','asdasd')
     search_string = request.GET.get('text') or 'foo'
     output_text = gen_response_object('fbid',item_type='teacher')
     return HttpResponse(output_text, content_type='application/json')
@@ -154,7 +172,7 @@ def gen_response_object(fbid,item_type='course'):
 def post_facebook_message(fbid,message_text):
     post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
     message_text = message_text.lower()
-
+    save_message(fbid)
     if message_text in 'teacher,why,course'.split(','):
         response_msg = gen_response_object(fbid,item_type=message_text)
     else:
