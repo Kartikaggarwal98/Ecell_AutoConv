@@ -19,6 +19,7 @@ from dashboard.models import Messages
 VERIFY_TOKEN = '7thseptember2016'
 PAGE_ACCESS_TOKEN = 'EAANMp2y1xZCcBAM9YvGljkE3CJKyGqw7xtkGc5PHWvZBKMXBZAsEzsYJ3ZAvDqBUEIadRVM57ZBZCcBEowWyuvM2kSvVpuPfPQwK2PHuEx0Xq4X0PUZAcZAokx8biJiPR4XntyHo22GfaCKSozgYWyX8i6wADbAAJiC2KJuZCr27hUAZDZD'
 
+
 def save_message(fbid='1129928563722136',message_text='hi'):
     url = 'https://graph.facebook.com/v2.6/%s?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=%s'%(fbid,PAGE_ACCESS_TOKEN)
     print url
@@ -172,7 +173,7 @@ def gen_response_object(fbid,item_type='course'):
 def post_facebook_message(fbid,message_text):
     post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
     message_text = message_text.lower()
-    save_message(fbid)
+    save_message(fbid,message_text)
     if message_text in 'teacher,why,course'.split(','):
         response_msg = gen_response_object(fbid,item_type=message_text)
     else:

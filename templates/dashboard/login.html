@@ -1,0 +1,21 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+<div class='row'>
+
+	<div class="col-md-8 col-md-offset-2">
+		<form class="navbar-form navbar-left" method='POST' action='/searchPOST'>
+			
+			{% csrf_token %}
+
+		  <div class="form-group">
+		    <input type="text" name='searchstring' class="form-control" placeholder="Email id">
+		  </div><br>
+		  <input type='text' name='searchstring' class='form-control' placeholder="Batch">
+		  <button type="submit" class="btn btn-default">Submit</button>
+		
+		</form>
+	</div>
+</div>
+
+{% endblock content %}
