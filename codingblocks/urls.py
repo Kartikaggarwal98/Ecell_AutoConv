@@ -10,6 +10,6 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^facebook_auth/?$', MyChatBotView.as_view()),
-    url(r'^$', index),
+    url(r'^$',index),
     url(r'^dashboard/?$',dashboard_index),
 )
