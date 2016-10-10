@@ -8,8 +8,11 @@ from django.conf import settings
 from dashboard.models import Messages
 
 def index(request):
-
 	context_dict = {}
 	context_dict['hi'] = 'hi'
-	context_dict['data'] = Messages.objects.all()
+	context_dict['data'] = Messages.objects.all()[::-1]
 	return render(request, 'dashboard/index.html', context_dict)
+
+def login(request):
+	context_dict = {}
+	return render(request, 'dashboard/login.html', context_dict)	
