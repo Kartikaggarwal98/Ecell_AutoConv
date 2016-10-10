@@ -21,3 +21,4 @@ class Messages(models.Model):
 	#add date time stamp field
 	def __unicode__(self):
 		return self.name
+

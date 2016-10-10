@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from django.conf import settings
 
-from dashboard.models import Messages
+from dashboard.models import Messages,User
 
 def index(request):
 	context_dict = {}
@@ -15,10 +15,15 @@ def index(request):
 
 def login(request):
 	context_dict = {}
+	fb_id=request.GET.get('fb_id')
 	if(request.method == 'POST'):
 		email=request.POST.get('email')
 		batch=request.POST.get('batch')
 		context_dict['email']=email
 		context_dict['batch']=batch
+		p=User.objects.get_or_create(fb_id=fb_id,
+			email=email,
+			batch=batch)[0]
+		p.save()
 		return render(request,'dashboard/logged_in.html',context_dict)
 	return render(request, 'dashboard/login.html', context_dict)	
