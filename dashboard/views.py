@@ -13,14 +13,6 @@ def index(request):
 	context_dict['data'] = Messages.objects.all()[::-1]
 	return render(request, 'dashboard/index.html', context_dict)
 
-@csrf_exempt
-def log_in(request):
-	c={}
-	# if request.method == 'POST':
-	# 	email=request.POST.get('email')
-	# 	batch=request.POST.get('batch')
-	# 	c['email']=email
-	# 	c['batch']=batch
-	# 	return render(request,'dashboard/logged_in.html',c)
-	c.update(csrf(request))
-	return render(request,'login.html',c)
+def login(request):
+	context_dict = {}
+	return render(request, 'dashboard/login.html', context_dict)	
