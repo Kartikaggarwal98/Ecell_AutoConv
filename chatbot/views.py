@@ -224,7 +224,7 @@ def handle_postback(fbid,payload):
                               "buttons":[
                                   {
                                                   "type":"web_url",
-                                                  "url":"http://codingblocks.herokuapp.com/login?fb_id=%s"%(fbid),
+                                                  "url":"http://codingblocksdjango.herokuapp.com/login?fb_id=%s"%(fbid),
                                                   "title":"Select Criteria",
                                                   "webview_height_ratio": "compact"
                                                 }
