@@ -17,6 +17,7 @@ def login(request):
 	context_dict = {}
 	if(request.method == 'GET'):
 		fb_id=request.GET.get('fb_id')
+		print "fb id ***",fb_id
 	# context_dict['fb_id']=fb_id
 	if(request.method == 'POST'):
 		email=request.POST.get('email')
