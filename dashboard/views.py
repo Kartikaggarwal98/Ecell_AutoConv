@@ -12,10 +12,12 @@ def index(request):
 	context_dict['hi'] = 'hi'
 	context_dict['data'] = Messages.objects.all()[::-1]
 	return render(request, 'dashboard/index.html', context_dict)
-
+fb_id=''
 def login(request):
 	context_dict = {}
-	fb_id=request.GET.get('fb_id')
+	if(request.method == 'GET'):
+		fb_id=request.GET.get('fb_id')
+	# context_dict['fb_id']=fb_id
 	if(request.method == 'POST'):
 		email=request.POST.get('email')
 		batch=request.POST.get('batch')
@@ -26,4 +28,6 @@ def login(request):
 			batch=batch)[0]
 		p.save()
 		return render(request,'dashboard/logged_in.html',context_dict)
+
+
 	return render(request, 'dashboard/login.html', context_dict)	
