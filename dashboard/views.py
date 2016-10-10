@@ -15,4 +15,10 @@ def index(request):
 
 def login(request):
 	context_dict = {}
+	if(request.method == 'POST'):
+		email=request.POST.get('email')
+		batch=request.POST.get('batch')
+		context_dict['email']=email
+		context_dict['batch']=batch
+		return render(request,'dashboard/logged_in.html',context_dict)
 	return render(request, 'dashboard/login.html', context_dict)	
