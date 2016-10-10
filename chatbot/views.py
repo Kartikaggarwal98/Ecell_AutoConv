@@ -93,7 +93,7 @@ def set_greeting_text():
 
 def index(request):
     set_menu()
-    domain_whitelisting()
+    domain_whitelist()
     handle_postback('fbid','MENU_CALL')
     post_facebook_message('1129928563722136','asdasd')
     search_string = request.GET.get('text') or 'foo'
@@ -211,7 +211,31 @@ def handle_postback(fbid,payload):
     elif payload == 'MENU_TEACHER':
         return post_facebook_message(fbid,'teacher')
     elif payload == 'MENU_WHY':
-        return post_facebook_message(fbid,'why')
+        response_object = {
+                        "recipient":{
+                          "id":fbid
+                        },
+                        "message":{
+                          "attachment":{
+                            "type":"template",
+                            "payload":{
+                              "template_type":"button",
+                              "text":"What do you want to do next?",
+                              "buttons":[
+                                  {
+                                                  "type":"web_url",
+                                                  "url":"http://codingblocks.herokuapp.com/login?fb_id=%s"%(fbid),
+                                                  "title":"Select Criteria",
+                                                  "webview_height_ratio": "compact"
+                                                }
+                              ]
+                            }
+                          }
+                        }
+                      }
+        response_msg = json.dumps(response_object)
+        requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
+        
     elif payload == "MENU_HELP":
         output_text = 'Welcome to CodingBlocks chatbot, you can see this chatbot to ...'
         response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
