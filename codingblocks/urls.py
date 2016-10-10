@@ -3,8 +3,7 @@ from django.contrib import admin
 
 from chatbot.views import MyChatBotView, index
 from dashboard.views import index as dashboard_index
-from dashboard.views import log_in,auth_login
-urlpatterns = patterns('',
+from dashboard.views import login
     # Examples:
     # url(r'^$', 'codingblocks.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
@@ -13,5 +12,5 @@ urlpatterns = patterns('',
     url(r'^facebook_auth/?$', MyChatBotView.as_view()),
     url(r'^$',index),
     url(r'^dashboard/?$',dashboard_index),
-    url(r'^login/?$',log_in)
+    url(r'^login/?$',login),
 )
