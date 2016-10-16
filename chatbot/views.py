@@ -186,12 +186,102 @@ def gen_response_object(fbid,item_type='course'):
 
     return json.dumps(response_object)
 
+    def gen_answer_object(fbid,keyword='index error'):
+        api_url = 'http://soapi1.herokuapp.com/api/?q=%s'%(keyword)
+        resp = requests.get(url=api_url)
+        item_arr = json.loads(resp.text)
+
+        for i in item_arr[:5]:
+            sub_item = {
+                            "title":"Question #%s"%(item_arr.index(i)),
+                            "item_url": "http://stackoverflow.com/q/%s"%(i['id']),
+                            "image_url":i['image'],
+                            "subtitle":i['title'],
+                            "buttons":[
+                              {
+                                "type":"web_url",
+                                "url":i['answers'][0],
+                                "title":"Answer 1"
+                              },
+                              {
+                                "type":"web_url",
+                                "url":i['answers'][1],
+                                "title":"Answer 2"
+                              },
+                              {
+                                "type":"element_share"
+                              }              
+                            ]
+                          }
+            elements_arr.append(sub_item)
+
+
+        response_object = {
+                  "recipient":{
+                    "id":fbid
+                  },
+                  "message":{
+                    "attachment":{
+                      "type":"template",
+                      "payload":{
+                        "template_type":"generic",
+                        "elements":elements_arr
+                      }
+                    }
+                  }
+                }
+
+        return json.dumps(response_object)
+
+
+
+
+  for i in item_arr:
+      sub_item = {
+                      "title":i['itemname'],
+                      "item_url":i['itemlink'],
+                      "image_url":i['itempicture'],
+                      "subtitle":i['itemdescription'],
+                      "buttons":[
+                        {
+                          "type":"web_url",
+                          "url":i['itemlink'],
+                          "title":"Open"
+                        },
+                        {
+                          "type":"element_share"
+                        }              
+                      ]
+                    }
+      elements_arr.append(sub_item)
+
+
+  response_object = {
+            "recipient":{
+              "id":fbid
+            },
+            "message":{
+              "attachment":{
+                "type":"template",
+                "payload":{
+                  "template_type":"generic",
+                  "elements":elements_arr
+                }
+              }
+            }
+          }
+
+  return json.dumps(response_object)
+
 def post_facebook_message(fbid,message_text):
     post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
     message_text = message_text.lower()
     save_message(fbid,message_text)
     if message_text in 'teacher,why,course'.split(','):
         response_msg = gen_response_object(fbid,item_type=message_text)
+    elif message_text.startswith('/ask'):
+        query = message_text.replace('/ask','')
+        response_msg = gen_answer_object(fbid,query)
     else:
         output_text = "Hi, how may I help you"
         response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})

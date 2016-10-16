@@ -34,3 +34,6 @@ def login(request):
 
 
 	return render(request, 'dashboard/login.html', context_dict)	
+
+def web(request):
+	return render(request,'dashboard/site.html')
