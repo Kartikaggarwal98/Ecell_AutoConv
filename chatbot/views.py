@@ -238,42 +238,42 @@ def gen_answer_object(fbid,keyword='index error'):
 
 
 
-  for i in item_arr:
-      sub_item = {
-                      "title":i['itemname'],
-                      "item_url":i['itemlink'],
-                      "image_url":i['itempicture'],
-                      "subtitle":i['itemdescription'],
-                      "buttons":[
-                        {
-                          "type":"web_url",
-                          "url":i['itemlink'],
-                          "title":"Open"
-                        },
-                        {
-                          "type":"element_share"
-                        }              
-                      ]
+      for i in item_arr:
+          sub_item = {
+                          "title":i['itemname'],
+                          "item_url":i['itemlink'],
+                          "image_url":i['itempicture'],
+                          "subtitle":i['itemdescription'],
+                          "buttons":[
+                            {
+                              "type":"web_url",
+                              "url":i['itemlink'],
+                              "title":"Open"
+                            },
+                            {
+                              "type":"element_share"
+                            }              
+                          ]
+                        }
+          elements_arr.append(sub_item)
+
+
+      response_object = {
+                "recipient":{
+                  "id":fbid
+                },
+                "message":{
+                  "attachment":{
+                    "type":"template",
+                    "payload":{
+                      "template_type":"generic",
+                      "elements":elements_arr
                     }
-      elements_arr.append(sub_item)
-
-
-  response_object = {
-            "recipient":{
-              "id":fbid
-            },
-            "message":{
-              "attachment":{
-                "type":"template",
-                "payload":{
-                  "template_type":"generic",
-                  "elements":elements_arr
+                  }
                 }
               }
-            }
-          }
 
-  return json.dumps(response_object)
+      return json.dumps(response_object)
 
 def post_facebook_message(fbid,message_text):
     post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
