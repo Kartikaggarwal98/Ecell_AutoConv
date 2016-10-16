@@ -191,6 +191,7 @@ def gen_response_object(fbid,item_type='course'):
         resp = requests.get(url=api_url)
         item_arr = json.loads(resp.text)
 
+        elements_arr=[]
         for i in item_arr[:5]:
             sub_item = {
                             "title":"Question #%s"%(item_arr.index(i)),
