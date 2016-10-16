@@ -92,7 +92,8 @@ def set_greeting_text():
 
 
 def index(request):
-    set_menu()
+    #set_menu()
+    gen_answer_object('1129928563722136',keyword='index error')
     domain_whitelist()
     handle_postback('fbid','MENU_CALL')
     post_facebook_message('1129928563722136','asdasd')
@@ -186,53 +187,53 @@ def gen_response_object(fbid,item_type='course'):
 
     return json.dumps(response_object)
 
-    def gen_answer_object(fbid,keyword='index error'):
-        api_url = 'http://soapi1.herokuapp.com/api/?q=%s'%(keyword)
-        resp = requests.get(url=api_url)
-        item_arr = json.loads(resp.text)
+def gen_answer_object(fbid,keyword='index error'):
+      api_url = 'http://soapi1.herokuapp.com/api/?q=%s'%(keyword)
+      resp = requests.get(url=api_url)
+      item_arr = json.loads(resp.text)
 
-        elements_arr=[]
-        for i in item_arr[:5]:
-            sub_item = {
-                            "title":"Question #%s"%(item_arr.index(i)),
-                            "item_url": "http://stackoverflow.com/q/%s"%(i['id']),
-                            "image_url":i['image'],
-                            "subtitle":i['title'],
-                            "buttons":[
-                              {
-                                "type":"web_url",
-                                "url":i['answers'][0],
-                                "title":"Answer 1"
-                              },
-                              {
-                                "type":"web_url",
-                                "url":i['answers'][1],
-                                "title":"Answer 2"
-                              },
-                              {
-                                "type":"element_share"
-                              }              
-                            ]
-                          }
-            elements_arr.append(sub_item)
+      elements_arr=[]
+      for i in item_arr[:5]:
+          sub_item = {
+                          "title":"Question #%s"%(item_arr.index(i)),
+                          "item_url": "http://stackoverflow.com/q/%s"%(i['id']),
+                          "image_url":i['image'],
+                          "subtitle":i['title'],
+                          "buttons":[
+                            {
+                              "type":"web_url",
+                              "url":i['answers'][0],
+                              "title":"Answer 1"
+                            },
+                            {
+                              "type":"web_url",
+                              "url":i['answers'][1],
+                              "title":"Answer 2"
+                            },
+                            {
+                              "type":"element_share"
+                            }              
+                          ]
+                        }
+          elements_arr.append(sub_item)
 
 
-        response_object = {
-                  "recipient":{
-                    "id":fbid
-                  },
-                  "message":{
-                    "attachment":{
-                      "type":"template",
-                      "payload":{
-                        "template_type":"generic",
-                        "elements":elements_arr
-                      }
+      response_object = {
+                "recipient":{
+                  "id":fbid
+                },
+                "message":{
+                  "attachment":{
+                    "type":"template",
+                    "payload":{
+                      "template_type":"generic",
+                      "elements":elements_arr
                     }
                   }
                 }
+              }
 
-        return json.dumps(response_object)
+      return json.dumps(response_object)
 
 
 
