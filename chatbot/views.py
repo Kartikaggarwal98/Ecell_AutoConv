@@ -209,7 +209,7 @@ def gen_answer_object(fbid,keyword='index error'):
       item_arr = json.loads(resp.text)
 
       elements_arr=[]
-      for i in item_arr[:5]:
+      for i in item_arr[:2]:
           sub_item = {
                           "title":"Question #%s"%(item_arr.index(i)),
                           "item_url": "http://stackoverflow.com/q/%s"%(i['id']),
