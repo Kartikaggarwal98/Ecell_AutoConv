@@ -219,13 +219,13 @@ def gen_answer_object(fbid,keyword='index error'):
                             {
                               "type":"web_url",
                               "url":i['answers'][0],
-                              "title":"Answer 1"
+                              "title":"Answer 1",
                               "webview_height_ratio": "compact"
                             },
                             {
                               "type":"web_url",
                               "url":i['answers'][1],
-                              "title":"Answer 2"
+                              "title":"Answer 2",
                               "webview_height_ratio": "compact"
                             },
                             {
@@ -266,7 +266,9 @@ def gen_answer_object(fbid,keyword='index error'):
                             {
                               "type":"web_url",
                               "url":i['itemlink'],
-                              "title":"Open"
+                              "title":"Open",
+                              "webview_height_ratio": "compact"
+
                             },
                             {
                               "type":"element_share"
