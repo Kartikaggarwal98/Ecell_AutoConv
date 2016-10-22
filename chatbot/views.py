@@ -34,6 +34,21 @@ def domain_whitelist(domain='https://codingblocksdjango.herokuapp.com'):
 
     logg(status.text,symbol='--WHT--')              
 
+def domain_whitelist_2(domain='http://stackoverflow.com/'):
+    post_message_url = "https://graph.facebook.com/v2.6/me/thread_settings?access_token=%s"%(PAGE_ACCESS_TOKEN)
+    response_object =     {
+                "setting_type" : "domain_whitelisting",
+                "whitelisted_domains" : [domain],
+                "domain_action_type": "add"
+              }
+    response_msg = json.dumps(response_object)
+
+    status = requests.post(post_message_url, 
+                headers={"Content-Type": "application/json"},
+                data=response_msg)
+
+    logg(status.text,symbol='--DOMHT--')   
+
 
 def save_message(fbid='1129928563722136',message_text='hi'):
     url = 'https://graph.facebook.com/v2.6/%s?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=%s'%(fbid,PAGE_ACCESS_TOKEN)
@@ -95,6 +110,7 @@ def index(request):
     #set_menu()
     gen_answer_object('1129928563722136',keyword='index error')
     domain_whitelist()
+    domain_whitelist_2()
     handle_postback('fbid','MENU_CALL')
     post_facebook_message('1129928563722136','asdasd')
     search_string = request.GET.get('text') or 'foo'
@@ -188,7 +204,7 @@ def gen_response_object(fbid,item_type='course'):
     return json.dumps(response_object)
 
 def gen_answer_object(fbid,keyword='index error'):
-      api_url = 'http://soapi1.herokuapp.com/api/?q=%s'%(keyword)
+      api_url = 'http://soapidjango.herokuapp.com/api/?q=%s'%(keyword)
       resp = requests.get(url=api_url)
       item_arr = json.loads(resp.text)
 
@@ -204,11 +220,13 @@ def gen_answer_object(fbid,keyword='index error'):
                               "type":"web_url",
                               "url":i['answers'][0],
                               "title":"Answer 1"
+                              "webview_height_ratio": "compact"
                             },
                             {
                               "type":"web_url",
                               "url":i['answers'][1],
                               "title":"Answer 2"
+                              "webview_height_ratio": "compact"
                             },
                             {
                               "type":"element_share"
