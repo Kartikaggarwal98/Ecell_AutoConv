@@ -1,5 +1,7 @@
 {% extends "dashboard/base.html" %}
 
+{% load my_tags %}
+
 {% block head %}
 	
 	<style type="text/css">
@@ -8,6 +10,13 @@
 			height: 100%;
 			min-height: 600px;
 		}
+		html{
+			background: {% random_color_1 %} !important; /* fallback for old browsers */
+	
+			background: linear-gradient(to left,{% random_color_1 %} , {% random_color_2 %} ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		}
+
+
 	</style>
 
 {% endblock head %}
@@ -31,6 +40,10 @@
 	  <!-- Tab panes -->
 	  <div class="tab-content">
 	    <div role="tabpanel" class="tab-pane active" id="home">
+	    	{{ "HELLO" | lower }}
+
+	    	{% concat 'Hi ' 'How ' 'r you' as result %}
+	    	{{ result }}
 	    	
 	    	<!-- <iframe src="https://docs.google.com/spreadsheets/d/1EXwvmdQV4WaMXtL4Ucn3kwwhS1GOMFu0Nh9ByVCfrxk/edit#gid=0"></iframe>
  -->

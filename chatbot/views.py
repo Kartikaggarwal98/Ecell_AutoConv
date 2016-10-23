@@ -34,7 +34,7 @@ def domain_whitelist(domain='https://codingblocksdjango.herokuapp.com'):
 
     logg(status.text,symbol='--WHT--')              
 
-def domain_whitelist_2(domain='http://stackoverflow.com/'):
+def domain_whitelist_2(domain='http://stackoverflow.com'):
     post_message_url = "https://graph.facebook.com/v2.6/me/thread_settings?access_token=%s"%(PAGE_ACCESS_TOKEN)
     response_object =     {
                 "setting_type" : "domain_whitelisting",
@@ -112,6 +112,7 @@ def index(request):
     domain_whitelist()
     domain_whitelist_2()
     handle_postback('fbid','MENU_CALL')
+    post_facebook_message('1129928563722136','/ask')
     post_facebook_message('1129928563722136','asdasd')
     search_string = request.GET.get('text') or 'foo'
     output_text = gen_response_object('fbid',item_type='teacher')
