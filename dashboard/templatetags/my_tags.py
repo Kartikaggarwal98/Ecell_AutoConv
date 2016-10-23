@@ -1,5 +1,5 @@
 from django import template
-import random 
+import random,datetime
 register= template.Library()
 
 @register.simple_tag
@@ -17,7 +17,7 @@ def random_color_2():
 	'''
 	r,g,b=random.randint(0,255),random.randint(0,255),random.randint(0,255)
 	return "rgb(%s,%s,%s)"%(r,g,b)
-	
+
 @register.simple_tag
 def current_time(format_string):
 	return datetime.datetime.now().strftime(format_string)

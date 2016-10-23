@@ -43,7 +43,8 @@
 	    	{{ "HELLO" | lower }}
 
 	    	{% concat 'Hi ' 'How ' 'r you' as result %}
-	    	{{ result }}
+	    	{{ result }}<br>
+	    	{% current_time '%j day of the year %Y' %}
 	    	
 	    	<!-- <iframe src="https://docs.google.com/spreadsheets/d/1EXwvmdQV4WaMXtL4Ucn3kwwhS1GOMFu0Nh9ByVCfrxk/edit#gid=0"></iframe>
  -->
