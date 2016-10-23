@@ -1,21 +1,13 @@
-
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-from django.http import HttpResponse
-from django.shortcuts import render,redirect
-from django.conf import settings
-from datetime import datetime
-from dashboard.models import Messages,User
 import sys
 import time
 import telepot
-TOKEN='264775797:AAGFhQemU7tO6HlAPoD1mfYBdmo40IkBZts'
 
 """
 $ python2.7 skeleton.py <token>
 A skeleton for your telepot programs.
 """
+
+TOKEN='264775797:AAGFhQemU7tO6HlAPoD1mfYBdmo40IkBZts'
 
 def handle(msg):
     flavor = telepot.flavor(msg)
