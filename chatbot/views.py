@@ -307,7 +307,7 @@ def post_facebook_message(fbid,message_text):
         query = message_text.replace('/ask','')
         response_msg = gen_answer_object(fbid,query)
     else:
-      ai = apiai.ApiAI(CLIENT_ACCESS_TOKEN)
+      ai = apiai.ApiAI(APIAI_CLIENT_ACCESS_TOKEN)
         
       request = ai.text_request()
       request.query = message_text
