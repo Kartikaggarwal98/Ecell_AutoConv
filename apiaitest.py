@@ -20,3 +20,6 @@ response = json.loads(request.getresponse().read())
 
 result = response['result']
 print result
+
+
+print(u"< %s" % response['result']['fulfillment']['speech'])

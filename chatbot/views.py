@@ -307,8 +307,22 @@ def post_facebook_message(fbid,message_text):
         query = message_text.replace('/ask','')
         response_msg = gen_answer_object(fbid,query)
     else:
-        output_text = "Hi, how may I help you"
-        response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
+      ai = apiai.ApiAI(CLIENT_ACCESS_TOKEN)
+        
+      request = ai.text_request()
+      request.query = message_text
+
+      response = json.loads(request.getresponse().read())
+
+      result = response['result']
+      print result
+
+      output_text= response['result']['fulfillment']['speech']
+      print(u"< %s" % output_text)
+
+    # else:
+    #     output_text = "Hi, how may I help you"
+     response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
     
     requests.post(post_message_url, 
                     headers={"Content-Type": "application/json"},
