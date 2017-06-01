@@ -12,12 +12,13 @@ import requests
 import re
 import random
 import pprint
+import apiai
 # Create your views here.
 
 from dashboard.models import Messages
-
+APIAI_CLIENT_ACCESS_TOKEN= '0e76c8cfd8c44710aab2224c72d3aac7'
 VERIFY_TOKEN = '7thseptember2016'
-PAGE_ACCESS_TOKEN = 'EAANMp2y1xZCcBAM9YvGljkE3CJKyGqw7xtkGc5PHWvZBKMXBZAsEzsYJ3ZAvDqBUEIadRVM57ZBZCcBEowWyuvM2kSvVpuPfPQwK2PHuEx0Xq4X0PUZAcZAokx8biJiPR4XntyHo22GfaCKSozgYWyX8i6wADbAAJiC2KJuZCr27hUAZDZD'
+PAGE_ACCESS_TOKEN = 'EAAHc263z0xoBAAF1cd4QXWzifvAG31ZCl6ssuSAHRGkzNm6SZAkLbnp7qMlAx3OhSsr6ZBheBTW7kietb26xnKZAXzyjqg8wBnOvzjq8ROeQPef7aPO5z4qSqIzPHb9lGY83T6I8ZA5Y3hgSew6a7eu08XcJyMZA2ZA3IWwBZBsppAZDZD'
 
 def domain_whitelist(domain='https://codingblocksdjango.herokuapp.com'):
     post_message_url = "https://graph.facebook.com/v2.6/me/thread_settings?access_token=%s"%(PAGE_ACCESS_TOKEN)
