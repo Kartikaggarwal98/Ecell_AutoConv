@@ -18,7 +18,7 @@ import apiai
 from dashboard.models import Messages
 APIAI_CLIENT_ACCESS_TOKEN= '0e76c8cfd8c44710aab2224c72d3aac7'
 VERIFY_TOKEN = '7thseptember2016'
-PAGE_ACCESS_TOKEN = 'EAAHc263z0xoBAAF1cd4QXWzifvAG31ZCl6ssuSAHRGkzNm6SZAkLbnp7qMlAx3OhSsr6ZBheBTW7kietb26xnKZAXzyjqg8wBnOvzjq8ROeQPef7aPO5z4qSqIzPHb9lGY83T6I8ZA5Y3hgSew6a7eu08XcJyMZA2ZA3IWwBZBsppAZDZD'
+PAGE_ACCESS_TOKEN = 'EAAZAB0AYNpNkBADHRjDJ3ED9AcDjZC6r7m71bbWGXadBZCnHH0NHe77ZCEIV5neqZB7VohNHrzmHZALaIYvsVLcZBqWYX2RTxU3YmnaTXWvFqGzHVMbMCkVZC9o7RBeftXj6QIZC7plWs8GGzZAV5sGfQGhpZBrPAZCjrzSnvCQgUNwH3jtrJYNy57ZAA'
 
 def domain_whitelist(domain='https://codingblocksdjango.herokuapp.com'):
     post_message_url = "https://graph.facebook.com/v2.6/me/thread_settings?access_token=%s"%(PAGE_ACCESS_TOKEN)
