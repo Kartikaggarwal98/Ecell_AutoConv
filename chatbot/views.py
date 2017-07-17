@@ -324,7 +324,7 @@ def post_facebook_message(fbid,message_text):
 
     # else:
     #     output_text = "Hi, how may I help you"
-    
+    print response_msg
     requests.post(post_message_url, 
                     headers={"Content-Type": "application/json"},
                     data=response_msg)
