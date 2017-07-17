@@ -109,16 +109,16 @@ def set_greeting_text():
 
 
 def index(request):
-    #set_menu()
-    gen_answer_object('1129928563722136',keyword='index error')
-    domain_whitelist()
-    domain_whitelist_2()
-    handle_postback('fbid','MENU_CALL')
-    post_facebook_message('1129928563722136','/ask')
-    post_facebook_message('1129928563722136','asdasd')
-    search_string = request.GET.get('text') or 'foo'
-    output_text = gen_response_object('fbid',item_type='teacher')
-    return HttpResponse(output_text, content_type='application/json')
+    set_menu()
+    # gen_answer_object('1129928563722136',keyword='index error')
+    # domain_whitelist()
+    # domain_whitelist_2()
+    # handle_postback('fbid','MENU_CALL')
+    # post_facebook_message('1129928563722136','/ask')
+    # post_facebook_message('1129928563722136','asdasd')
+    # search_string = request.GET.get('text') or 'foo'
+    # output_text = gen_response_object('fbid',item_type='teacher')
+    # return HttpResponse(output_text, content_type='application/json')
 
 
 def set_menu():
@@ -130,28 +130,23 @@ def set_menu():
                           "call_to_actions":[
                             {
                               "type":"postback",
-                              "title":"Help",
+                              "title":"About",
                               "payload":"MENU_HELP"
                             },
                             {
                               "type":"postback",
-                              "title":"Course",
+                              "title":"Members",
                               "payload":"MENU_COURSE"
                             },
                             {
                               "type":"postback",
-                              "title":"Teachers",
+                              "title":"Events",
                               "payload":"MENU_TEACHER"
                             },
                             {
                               "type":"postback",
                               "title":"Talk to a human",
                               "payload":"MENU_CALL"
-                            },
-                            {
-                              "type":"postback",
-                              "title":"Why CodingBlocks",
-                              "payload":"MENU_WHY"
                             }
                           ]
                         }
