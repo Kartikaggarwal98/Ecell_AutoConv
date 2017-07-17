@@ -171,7 +171,7 @@ def gen_response_object(fbid,item_type='members'):
 
     for i in item_arr:
         sub_item = {
-                        "title":i['etype'],
+                        "title":i['ename'],
                         "item_url":i['elink'],
                         "image_url":i['epicture'],
                         "buttons":[
