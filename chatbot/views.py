@@ -70,7 +70,8 @@ def save_message(fbid='1129928563722136',message_text='hi'):
     return json.dumps(data)
 
 def scrape_spreadsheet():
-    sheet_id = '1EXwvmdQV4WaMXtL4Ucn3kwwhS1GOMFu0Nh9ByVCfrxk'
+    sheet_id='1c-8Zx-g0USneS5X9bThXf0G-O_NvXV6gT_k3VYnSIjE'
+    #sheet_id = '1EXwvmdQV4WaMXtL4Ucn3kwwhS1GOMFu0Nh9ByVCfrxk'
     url = 'https://spreadsheets.google.com/feeds/list/%s/od6/public/values?alt=json'%(sheet_id)
 
     resp = requests.get(url=url)
@@ -163,17 +164,16 @@ def set_menu():
     logg(status.text,'-MENU-OBJECT-')
 
 
-def gen_response_object(fbid,item_type='course'):
+def gen_response_object(fbid,item_type='members'):
     spreadsheet_object = scrape_spreadsheet()
-    item_arr = [i for i in spreadsheet_object if i['itemtype'] == item_type]
+    item_arr = [i for i in spreadsheet_object if i['etype'] == item_type]
     elements_arr = []
 
     for i in item_arr:
         sub_item = {
-                        "title":i['itemname'],
-                        "item_url":i['itemlink'],
-                        "image_url":i['itempicture'],
-                        "subtitle":i['itemdescription'],
+                        "title":i['etype'],
+                        "item_url":i['elink'],
+                        "image_url":i['epicture'],
                         "buttons":[
                           {
                             "type":"web_url",
@@ -300,8 +300,8 @@ def gen_answer_object(fbid,keyword='index error'):
 def post_facebook_message(fbid,message_text):
     post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
     message_text = message_text.lower()
-    save_message(fbid,message_text)
-    if message_text in 'teacher,why,course'.split(','):
+    #save_message(fbid,message_text)
+    if message_text in 'members,about,events'.split(','):
         response_msg = gen_response_object(fbid,item_type=message_text)
     elif message_text.startswith('/ask'):
         query = message_text.replace('/ask','')
