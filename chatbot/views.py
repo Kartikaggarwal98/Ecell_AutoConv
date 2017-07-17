@@ -174,6 +174,7 @@ def gen_response_object(fbid,item_type='members'):
                         "title":i['ename'],
                         "item_url":i['elink'],
                         "image_url":i['epicture'],
+                        "subtitle":i['ename'],
                         "buttons":[
                           {
                             "type":"web_url",
