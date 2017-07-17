@@ -96,7 +96,7 @@ def set_greeting_text():
     request_msg = {
         "setting_type":"greeting",
           "greeting":{
-            "text":"Ecell bot"
+            "text":"Hello {{user_first_name}}! Welcome to Ecell bot."
           }
     }
     response_msg = json.dumps(request_msg)
@@ -110,7 +110,7 @@ def set_greeting_text():
 
 def index(request):
     set_greeting_text()
-    get_started_button()
+    #get_started_button()
     # set_menu()
     # gen_answer_object('1129928563722136',keyword='index error')
     # domain_whitelist()
@@ -416,17 +416,17 @@ def post_facebook_message(fbid,message_text):
     #         }
     #       }
     # }
-    # response_msg=json.dumps(response_msg)
-    response_msg_1={"message": {"attachment": {"type": "template", "payload": {"template_type": "generic", "elements": [{"buttons": [{"url": "http://codingblocks.com/", "type": "web_url", "title": "Open"}, {"type": "element_share"}], "subtitle": "...", "item_url": "http://codingblocks.com/", "image_url": "http://codingblocks.com/wp-content/uploads/2015/12/Team_manmohan-150x150.png", "title": "Manhoman Gupta"}, {"buttons": [{"url": "http://codingblocks.com/", "type": "web_url", "title": "Open"}, {"type": "element_share"}], "subtitle": "...", "item_url": "http://codingblocks.com/", "image_url": "http://codingblocks.com/wp-content/uploads/2015/12/Team_anushray-150x150.png", "title": "Anushray Gupta"}]}}}, "recipient": {"id": "1129928563722136"}}  
-    print response_msg
-    print "###########"
-    print response_msg==response_msg_1
-    print "###########"
-    print response_msg_1
+    response_msg=json.dumps(response_msg)
+    # response_msg_1={"message": {"attachment": {"type": "template", "payload": {"template_type": "generic", "elements": [{"buttons": [{"url": "http://codingblocks.com/", "type": "web_url", "title": "Open"}, {"type": "element_share"}], "subtitle": "...", "item_url": "http://codingblocks.com/", "image_url": "http://codingblocks.com/wp-content/uploads/2015/12/Team_manmohan-150x150.png", "title": "Manhoman Gupta"}, {"buttons": [{"url": "http://codingblocks.com/", "type": "web_url", "title": "Open"}, {"type": "element_share"}], "subtitle": "...", "item_url": "http://codingblocks.com/", "image_url": "http://codingblocks.com/wp-content/uploads/2015/12/Team_anushray-150x150.png", "title": "Anushray Gupta"}]}}}, "recipient": {"id": "1129928563722136"}}  
+    # print response_msg
+    # print "###########"
+    # print response_msg==response_msg_1
+    # print "###########"
+    # print response_msg_1
 
     requests.post(post_message_url, 
                     headers={"Content-Type": "application/json"},
-                    data=response_msg_1)
+                    data=response_msg)
 
 
 def handle_postback(fbid,payload):
