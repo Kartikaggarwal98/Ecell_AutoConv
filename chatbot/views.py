@@ -465,7 +465,7 @@ def handle_postback(fbid,payload):
         requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
         
     elif payload == "MENU_HELP":
-        output_text = 'Welcome to Ecell chatbot, you can see this chatbot to ...'
+        output_text = 'Welcome to Ecell chatbot, you can see this chatbot to ... \n Know about us,our members and past events..\n Contact us.. \n See menu for options'
         response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
         status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
     
