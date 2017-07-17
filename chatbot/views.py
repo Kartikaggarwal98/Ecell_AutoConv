@@ -177,7 +177,7 @@ def gen_response_object(fbid,item_type='members'):
                         "buttons":[
                           {
                             "type":"web_url",
-                            "url":i['itemlink'],
+                            "url":i['elink'],
                             "title":"Open"
                           },
                           {
