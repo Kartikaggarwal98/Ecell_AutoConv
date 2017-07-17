@@ -361,7 +361,7 @@ def post_facebook_message(fbid,message_text):
     elif message_text.startswith('/ask'):
         query = message_text.replace('/ask','')
         response_msg = gen_answer_object(fbid,query)
-    elif:
+    else:
       ai = apiai.ApiAI(APIAI_CLIENT_ACCESS_TOKEN)
         
       request = ai.text_request()
@@ -376,8 +376,7 @@ def post_facebook_message(fbid,message_text):
       print(u"< %s" % output_text)     
       response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
 
-    else:
-        output_text = "We will get back to you in some time"
+    
     # response_msg= {
     #     "recipient":{
     #         "id":fbid
