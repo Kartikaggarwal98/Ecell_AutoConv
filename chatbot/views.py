@@ -202,7 +202,7 @@ def gen_response_object(fbid,item_type='members'):
                 }
               }
             }
-
+    print "-------------response object-----------------"
     return json.dumps(response_object)
 
 def gen_answer_object(fbid,keyword='index error'):
@@ -321,10 +321,9 @@ def post_facebook_message(fbid,message_text):
       print(u"< %s" % output_text)     
       response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
 
-
     # else:
     #     output_text = "Hi, how may I help you"
-    
+    print response_msg    
     requests.post(post_message_url, 
                     headers={"Content-Type": "application/json"},
                     data=response_msg)
