@@ -361,7 +361,7 @@ def post_facebook_message(fbid,message_text):
     elif message_text.startswith('/ask'):
         query = message_text.replace('/ask','')
         response_msg = gen_answer_object(fbid,query)
-    else:
+    elif:
       ai = apiai.ApiAI(APIAI_CLIENT_ACCESS_TOKEN)
         
       request = ai.text_request()
