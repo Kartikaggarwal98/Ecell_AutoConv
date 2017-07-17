@@ -109,14 +109,14 @@ def set_greeting_text():
 
 
 def index(request):
-    set_greeting_text()
+    #set_greeting_text()
     #get_started_button()
     # set_menu()
     # gen_answer_object('1129928563722136',keyword='index error')
     # domain_whitelist()
     # domain_whitelist_2()
     # handle_postback('fbid','MENU_CALL')
-    #post_facebook_message('1129928563722136','teacher')
+    post_facebook_message('1129928563722136','hi')
     # post_facebook_message('1129928563722136','asdasd')
     # search_string = request.GET.get('text') or 'foo'
     # output_text = gen_response_object('fbid',item_type='members')
@@ -355,12 +355,12 @@ def post_facebook_message(fbid,message_text):
     message_text = message_text.lower()
     # save_message(fbid,message_text)
     if message_text in 'teacher,about,events'.split(','):
-        response_msg = gen_response_object(fbid,item_type=message_text)
+        output_text = gen_response_object(fbid,item_type=message_text)
     elif message_text=="get_started":
-      response_msg="Welcome to Ecell Bot"
+      output_text="Welcome to Ecell Bot"
     elif message_text.startswith('/ask'):
         query = message_text.replace('/ask','')
-        response_msg = gen_answer_object(fbid,query)
+        output_text = gen_answer_object(fbid,query)
     else:
       ai = apiai.ApiAI(APIAI_CLIENT_ACCESS_TOKEN)
         
@@ -414,7 +414,7 @@ def post_facebook_message(fbid,message_text):
     #         }
     #       }
     # }
-    response_msg=json.dumps({"recipient":{"id":fbid}, "message":{"text":response_msg}})
+    response_msg=json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
     # response_msg_1={"message": {"attachment": {"type": "template", "payload": {"template_type": "generic", "elements": [{"buttons": [{"url": "http://codingblocks.com/", "type": "web_url", "title": "Open"}, {"type": "element_share"}], "subtitle": "...", "item_url": "http://codingblocks.com/", "image_url": "http://codingblocks.com/wp-content/uploads/2015/12/Team_manmohan-150x150.png", "title": "Manhoman Gupta"}, {"buttons": [{"url": "http://codingblocks.com/", "type": "web_url", "title": "Open"}, {"type": "element_share"}], "subtitle": "...", "item_url": "http://codingblocks.com/", "image_url": "http://codingblocks.com/wp-content/uploads/2015/12/Team_anushray-150x150.png", "title": "Anushray Gupta"}]}}}, "recipient": {"id": "1129928563722136"}}  
     print response_msg
     # print "###########"
