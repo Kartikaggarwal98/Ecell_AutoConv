@@ -374,7 +374,6 @@ def post_facebook_message(fbid,message_text):
 
       output_text= response['result']['fulfillment']['speech']
       print(u"< %s" % output_text)     
-      response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
 
     
     # response_msg= {
