@@ -160,7 +160,7 @@ def set_menu():
                             },
                             {
                               "type":"postback",
-                              "title":"Talk to a human",
+                              "title":"Visit our Website",
                               "payload":"MENU_CALL"
                             }
                           ]
@@ -357,7 +357,7 @@ def post_facebook_message(fbid,message_text):
     if message_text in 'teacher,about,events'.split(','):
         output_text = gen_response_object(fbid,item_type=message_text)
     elif message_text=="get_started":
-      output_text="Welcome to Ecell Bot! \n Send us your query or see menu for help"
+      output_text="Welcome to IEEE NSIT Bot! \n Send us your query or see menu for help"
     elif message_text.startswith('/ask'):
         query = message_text.replace('/ask','')
         output_text = gen_answer_object(fbid,query)
@@ -465,7 +465,7 @@ def handle_postback(fbid,payload):
         requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
         
     elif payload == "MENU_HELP":
-        output_text = 'This is ECELL'
+        output_text = 'This is IEEE NSIT'
         response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
         status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
     
