@@ -109,6 +109,7 @@ def set_greeting_text():
 
 
 def index(request):
+    set_menu()
     set_greeting_text()
     #get_started_button()
     # set_menu()
@@ -173,7 +174,7 @@ def set_menu():
 
     logg(status.text,'-MENU-OBJECT-')
 
-def gen_response_object(fbid,item_type='teachers'):
+def gen_response_object(fbid,item_type='members'):
     spreadsheet_object = scrape_spreadsheet()
     item_arr = [i for i in spreadsheet_object if i['itemtype'] == item_type]
     elements_arr = []
@@ -354,7 +355,7 @@ def post_facebook_message(fbid,message_text):
     post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
     message_text = message_text.lower()
     # save_message(fbid,message_text)
-    if message_text in 'teacher,about,events'.split(','):
+    if message_text in 'members,about,events'.split(','):
         output_text = gen_response_object(fbid,item_type=message_text)
     elif message_text=="get_started":
       output_text="Welcome to IEEE NSIT Bot! \n Send us your query or see menu for help"
