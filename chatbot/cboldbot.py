@@ -70,7 +70,6 @@ def save_message(fbid='1129928563722136',message_text='hi'):
     return json.dumps(data)
 
 def scrape_spreadsheet():
-    # sheet_id='1c-8Zx-g0USneS5X9bThXf0G-O_NvXV6gT_k3VYnSIjE'
     sheet_id = '1EXwvmdQV4WaMXtL4Ucn3kwwhS1GOMFu0Nh9ByVCfrxk'
     url = 'https://spreadsheets.google.com/feeds/list/%s/od6/public/values?alt=json'%(sheet_id)
 
@@ -96,7 +95,7 @@ def set_greeting_text():
     request_msg = {
         "setting_type":"greeting",
           "greeting":{
-            "text":"Hello {{user_first_name}}! Greetings from IEEE NSIT. \n See menu for options"
+            "text":"Pokemon quiz bot"
           }
     }
     response_msg = json.dumps(request_msg)
@@ -109,32 +108,17 @@ def set_greeting_text():
 
 
 def index(request):
-    set_greeting_text()
-    #get_started_button()
-    # set_menu()
-    # gen_answer_object('1129928563722136',keyword='index error')
-    # domain_whitelist()
-    # domain_whitelist_2()
-    # handle_postback('fbid','MENU_CALL')
-    post_facebook_message('1129928563722136','hi')
-    # post_facebook_message('1129928563722136','asdasd')
-    # search_string = request.GET.get('text') or 'foo'
-    # output_text = gen_response_object('fbid',item_type='members')
-    # return HttpResponse(output_text, content_type='application/json')
+    #set_menu()
+    gen_answer_object('1129928563722136',keyword='index error')
+    domain_whitelist()
+    domain_whitelist_2()
+    handle_postback('fbid','MENU_CALL')
+    post_facebook_message('1129928563722136','/ask')
+    post_facebook_message('1129928563722136','asdasd')
+    search_string = request.GET.get('text') or 'foo'
+    output_text = gen_response_object('fbid',item_type='teacher')
+    return HttpResponse(output_text, content_type='application/json')
 
-def get_started_button():
-  post_message_url = 'https://graph.facebook.com/v2.6/me/thread_settings?access_token=%s'%PAGE_ACCESS_TOKEN
-  response_object= {
-                    'get_started':{
-                        'payload':'GET_STARTED_PAYLOAD'
-                      }
-  }
-  start_object = json.dumps(response_object)
-  status = requests.post(post_message_url,
-          headers = {"Content-Type": "application/json"},
-          data = start_object)
-
-  logg(status.text,'-START-OBJECT-')
 
 def set_menu():
     post_message_url = 'https://graph.facebook.com/v2.6/me/thread_settings?access_token=%s'%PAGE_ACCESS_TOKEN
@@ -145,23 +129,28 @@ def set_menu():
                           "call_to_actions":[
                             {
                               "type":"postback",
-                              "title":"About",
+                              "title":"Help",
                               "payload":"MENU_HELP"
                             },
                             {
                               "type":"postback",
-                              "title":"Members",
+                              "title":"Course",
                               "payload":"MENU_COURSE"
                             },
                             {
                               "type":"postback",
-                              "title":"Events",
+                              "title":"Teachers",
                               "payload":"MENU_TEACHER"
                             },
                             {
                               "type":"postback",
                               "title":"Talk to a human",
                               "payload":"MENU_CALL"
+                            },
+                            {
+                              "type":"postback",
+                              "title":"Why CodingBlocks",
+                              "payload":"MENU_WHY"
                             }
                           ]
                         }
@@ -173,7 +162,8 @@ def set_menu():
 
     logg(status.text,'-MENU-OBJECT-')
 
-def gen_response_object(fbid,item_type='teachers'):
+
+def gen_response_object(fbid,item_type='course'):
     spreadsheet_object = scrape_spreadsheet()
     item_arr = [i for i in spreadsheet_object if i['itemtype'] == item_type]
     elements_arr = []
@@ -213,48 +203,6 @@ def gen_response_object(fbid,item_type='teachers'):
               }
             }
 
-    return json.dumps(response_object)
-
-def gen_response_object_1(fbid,item_type='members'):
-    spreadsheet_object = scrape_spreadsheet()
-    item_arr = [i for i in spreadsheet_object if i['etype'] == item_type]
-    elements_arr = []
-
-    for i in item_arr:
-        sub_item = {
-                        "title":i['ename'],
-                        "item_url":i['elink'],
-                        "image_url":i['epicture'],
-                        "subtitle":i['ename'],
-                        "buttons":[
-                          {
-                            "type":"web_url",
-                            "url":i['elink'],
-                            "title":"Open"
-                          },
-                          {
-                            "type":"element_share"
-                          }              
-                        ]
-                      }
-        elements_arr.append(sub_item)
-
-
-    response_object = {
-              "recipient":{
-                "id":fbid
-              },
-              "message":{
-                "attachment":{
-                  "type":"template",
-                  "payload":{
-                    "template_type":"generic",
-                    "elements":elements_arr
-                  }
-                }
-              }
-            }
-    print "-------------response object-----------------"
     return json.dumps(response_object)
 
 def gen_answer_object(fbid,keyword='index error'):
@@ -350,17 +298,14 @@ def gen_answer_object(fbid,keyword='index error'):
       return json.dumps(response_object)
 
 def post_facebook_message(fbid,message_text):
-    print message_text,"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
     post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
     message_text = message_text.lower()
-    # save_message(fbid,message_text)
-    if message_text in 'teacher,about,events'.split(','):
-        output_text = gen_response_object(fbid,item_type=message_text)
-    elif message_text=="get_started":
-      output_text="Welcome to Ecell Bot! \n Send us your query or see menu for help"
+    save_message(fbid,message_text)
+    if message_text in 'teacher,why,course'.split(','):
+        response_msg = gen_response_object(fbid,item_type=message_text)
     elif message_text.startswith('/ask'):
         query = message_text.replace('/ask','')
-        output_text = gen_answer_object(fbid,query)
+        response_msg = gen_answer_object(fbid,query)
     else:
       ai = apiai.ApiAI(APIAI_CLIENT_ACCESS_TOKEN)
         
@@ -374,54 +319,12 @@ def post_facebook_message(fbid,message_text):
 
       output_text= response['result']['fulfillment']['speech']
       print(u"< %s" % output_text)     
+      response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
 
-    
-    # response_msg= {
-    #     "recipient":{
-    #         "id":fbid
-    #       },
-    #       "message":{
-    #         "attachment":{
-    #           "type":"template",
-    #           "payload":{
-    #             "template_type":"generic",
-    #             "elements":[
-    #                {
-    #                 "title":"Welcome to Peter\'s Hats",
-    #                 "image_url":"https://petersfancybrownhats.com/company_image.png",
-    #                 "subtitle":"We\'ve got the right hat for everyone.",
-    #                 "default_action": {
-    #                   "type": "web_url",
-    #                   "url": "https://peterssendreceiveapp.ngrok.io/view?item=103",
-    #                   "messenger_extensions": True,
-    #                   "webview_height_ratio": "tall",
-    #                   "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-    #                 },
-    #                 "buttons":[
-    #                   {
-    #                     "type":"web_url",
-    #                     "url":"https://petersfancybrownhats.com",
-    #                     "title":"View Website"
-    #                   },{
-    #                     "type":"postback",
-    #                     "title":"Start Chatting",
-    #                     "payload":"DEVELOPER_DEFINED_PAYLOAD"
-    #                   }              
-    #                 ]      
-    #               }
-    #             ]
-    #           }
-    #         }
-    #       }
-    # }
-    response_msg=json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
-    # response_msg_1={"message": {"attachment": {"type": "template", "payload": {"template_type": "generic", "elements": [{"buttons": [{"url": "http://codingblocks.com/", "type": "web_url", "title": "Open"}, {"type": "element_share"}], "subtitle": "...", "item_url": "http://codingblocks.com/", "image_url": "http://codingblocks.com/wp-content/uploads/2015/12/Team_manmohan-150x150.png", "title": "Manhoman Gupta"}, {"buttons": [{"url": "http://codingblocks.com/", "type": "web_url", "title": "Open"}, {"type": "element_share"}], "subtitle": "...", "item_url": "http://codingblocks.com/", "image_url": "http://codingblocks.com/wp-content/uploads/2015/12/Team_anushray-150x150.png", "title": "Anushray Gupta"}]}}}, "recipient": {"id": "1129928563722136"}}  
+
+    # else:
+    #     output_text = "Hi, how may I help you"
     print response_msg
-    # print "###########"
-    # print response_msg==response_msg_1
-    # print "###########"
-    # print response_msg_1
-
     requests.post(post_message_url, 
                     headers={"Content-Type": "application/json"},
                     data=response_msg)
@@ -431,13 +334,11 @@ def handle_postback(fbid,payload):
     post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
     output_text = 'Payload Recieved: ' + payload
     logg(payload,symbol='*')
-    if payload == "GET_STARTED_PAYLOAD":
-      print "get started"
-      return post_facebook_message(fbid,'get_started')
-    if payload == 'MENU_ABOUT':
-        return post_facebook_message(fbid,'about')
-    elif payload == 'MENU_MEMBER':
-        return post_facebook_message(fbid,'members')
+
+    if payload == 'MENU_COURSE':
+        return post_facebook_message(fbid,'course')
+    elif payload == 'MENU_TEACHER':
+        return post_facebook_message(fbid,'teacher')
     elif payload == 'MENU_WHY':
         response_object = {
                         "recipient":{
@@ -465,7 +366,7 @@ def handle_postback(fbid,payload):
         requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
         
     elif payload == "MENU_HELP":
-        output_text = 'This is ECELL'
+        output_text = 'Welcome to CodingBlocks chatbot, you can see this chatbot to ...'
         response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
         status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
     
@@ -587,4 +488,3 @@ class MyChatBotView(generic.View):
                     logg(e,symbol='-332-')
 
         return HttpResponse()  
-
