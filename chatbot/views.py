@@ -70,8 +70,8 @@ def save_message(fbid='1129928563722136',message_text='hi'):
     return json.dumps(data)
 
 def scrape_spreadsheet():
-    # sheet_id='1c-8Zx-g0USneS5X9bThXf0G-O_NvXV6gT_k3VYnSIjE'
-    sheet_id = '1EXwvmdQV4WaMXtL4Ucn3kwwhS1GOMFu0Nh9ByVCfrxk'
+    sheet_id='1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM'
+    # sheet_id = '1EXwvmdQV4WaMXtL4Ucn3kwwhS1GOMFu0Nh9ByVCfrxk'
     url = 'https://spreadsheets.google.com/feeds/list/%s/od6/public/values?alt=json'%(sheet_id)
 
     resp = requests.get(url=url)
@@ -110,7 +110,13 @@ def set_greeting_text():
 
 def index(request):
     set_menu()
-    set_greeting_text()
+    print "set menu!!!!"
+    spreadsheet_object = scrape_spreadsheet()
+    item_arr = [i for i in spreadsheet_object if i['itemtype'] == 'members']
+    print item_arr
+    gen_response_object('1129928563722136','members')
+
+    #set_greeting_text()
     #get_started_button()
     # set_menu()
     # gen_answer_object('1129928563722136',keyword='index error')
