@@ -70,8 +70,25 @@ def save_message(fbid='1129928563722136',message_text='hi'):
     return json.dumps(data)
 
 def scrape_spreadsheet():
+
+  with open('sheet.json') as data_file:
+      data = json.loads(data_file.read())
+  arr =[]
+
+  for entry in data['feed']['entry']:
+      d = {}
+      for k,v in entry.iteritems():
+          if k.startswith('gsx'):
+              key_name = k.split('$')[-1]
+              d[key_name] = entry[k]['$t']
+
+      arr.append(d)
+
+  return arr
+
+def scrape_spreadsheet_2():
     sheet_id='1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM'
-    # sheet_id = '1EXwvmdQV4WaMXtL4Ucn3kwwhS1GOMFu0Nh9ByVCfrxk'
+    #sheet_id = '1EXwvmdQV4WaMXtL4Ucn3kwwhS1GOMFu0Nh9ByVCfrxk'
     url = 'https://spreadsheets.google.com/feeds/list/%s/od6/public/values?alt=json'%(sheet_id)
 
     resp = requests.get(url=url)
@@ -109,9 +126,10 @@ def set_greeting_text():
 
 
 def index(request):
-    set_menu()
+    #set_menu()
     print "set menu!!!!"
     spreadsheet_object = scrape_spreadsheet()
+    print spreadsheet_object
     item_arr = [i for i in spreadsheet_object if i['itemtype'] == 'members']
     print item_arr
     gen_response_object('1129928563722136','members')
@@ -364,7 +382,7 @@ def post_facebook_message(fbid,message_text):
     if message_text in 'members,about,events'.split(','):
         output_text = gen_response_object(fbid,item_type=message_text)
     elif message_text=="get_started":
-      output_text="Welcome to IEEE NSIT Bot! \n Send us your query or see menu for help"
+      output_text="Welcome to IEEE NSIT Bot! \n Send us your query or see Menu for Help"
     elif message_text.startswith('/ask'):
         query = message_text.replace('/ask','')
         output_text = gen_answer_object(fbid,query)
