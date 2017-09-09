@@ -35,7 +35,7 @@ def domain_whitelist(domain='https://codingblocksdjango.herokuapp.com'):
 
     logg(status.text,symbol='--WHT--')              
 
-def domain_whitelist_2(domain='http://stackoverflow.com'):
+def domain_whitelist_2(domain='https://petersfancybrownhats.com'):
     post_message_url = "https://graph.facebook.com/v2.6/me/thread_settings?access_token=%s"%(PAGE_ACCESS_TOKEN)
     response_object =     {
                 "setting_type" : "domain_whitelisting",
@@ -71,7 +71,7 @@ def save_message(fbid='1129928563722136',message_text='hi'):
 
 def scrape_spreadsheet():
 
-  with open('sheet.json') as data_file:
+  with open('sheet3.json') as data_file:
       data = json.loads(data_file.read())
   arr =[]
 
@@ -126,32 +126,67 @@ def set_greeting_text():
 
 
 def index(request):
+    fbid= '1129928563722136'
     #set_menu()
     print "set menu!!!!"
     post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
-
-    # spreadsheet_object = scrape_spreadsheet()
-    # print spreadsheet_object
-    # item_arr = [i for i in spreadsheet_object if i['itemtype'] == 'members']
-    # print item_arr
-    output_text= gen_response_object('1129928563722136','about')
+    # response_msg= gen_response_object('1129928563722136','members')
 
     #set_greeting_text()
     #get_started_button()
-    # set_menu()
     # gen_answer_object('1129928563722136',keyword='index error')
-    # domain_whitelist()
-    # domain_whitelist_2()
-    # output_text= handle_postback('1129928563722136','MENU_MEMBER')
+    #domain_whitelist()
+    #domain_whitelist_2()
+    status= handle_postback('1129928563722136','MENU_MEMBER')
 
-    #post_facebook_message('1129928563722136','hi')
-    # post_facebook_message('1129928563722136','asdasd')
+    # post_facebook_message('1129928563722136','members')
     # search_string = request.GET.get('text') or 'foo'
     # output_text = gen_response_object('fbid',item_type='members')
-    requests.post(post_message_url, 
-                    headers={"Content-Type": "application/json"},
-                    data=output_text)
-    return HttpResponse(output_text, content_type='application/json')
+
+    # response_msg= {
+    #     "recipient":{
+    #         "id":fbid
+    #       },
+    #       "message":{
+    #         "attachment":{
+    #           "type":"template",
+    #           "payload":{
+    #             "template_type":"generic",
+    #             "elements":[
+    #                {
+    #                 "title":"Welcome to Peter\'s Hats",
+    #                 "image_url":"https://petersfancybrownhats.com/company_image.png",
+    #                 "subtitle":"We\'ve got the right hat for everyone.",
+    #                 "default_action": {
+    #                   "type": "web_url",
+    #                   "url": "https://petersfancybrownhats.com",
+    #                   "messenger_extensions": True,
+    #                   "webview_height_ratio": "tall",
+    #                   "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
+    #                 },
+    #                 "buttons":[
+    #                   {
+    #                     "type":"web_url",
+    #                     "url":"https://petersfancybrownhats.com",
+    #                     "title":"View Website"
+    #                   },{
+    #                     "type":"postback",
+    #                     "title":"Start Chatting",
+    #                     "payload":"DEVELOPER_DEFINED_PAYLOAD"
+    #                   }              
+    #                 ]      
+    #               }
+    #             ]
+    #           }
+    #         }
+    #       }
+    # }
+    # response_msg=json.dumps({"recipient":{"id":'1129928563722136'}, "message":{"text":"output_text"}})
+    # response_msg= json.dumps(response_msg)
+    # status = requests.post(post_message_url, 
+    #                 headers={"Content-Type": "application/json"},
+    #                 data=response_msg)
+    return HttpResponse(status, content_type='application/json')
 
 def get_started_button():
   post_message_url = 'https://graph.facebook.com/v2.6/me/thread_settings?access_token=%s'%PAGE_ACCESS_TOKEN
@@ -247,10 +282,7 @@ def gen_response_object(fbid,item_type='members'):
               }
             }
     print response_object
-    # requests.post(post_message_url, 
-    #                 headers={"Content-Type": "application/json"},
-    #                 data=response_object)
-    print "Done"
+    
     return response_object
 
 def gen_response_object_1(fbid,item_type='members'):
@@ -394,8 +426,12 @@ def post_facebook_message(fbid,message_text):
     # save_message(fbid,message_text)
     if message_text in 'members,course,why'.split(','):
         output_text = gen_response_object(fbid,item_type=message_text)
+        response_msg= json.dumps(output_text)
+
     elif message_text=="get_started":
       output_text="Welcome to IEEE NSIT Bot! \n Send us your query or see Menu for Help"
+      response_msg=json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
+
     elif message_text.startswith('/ask'):
         query = message_text.replace('/ask','')
         output_text = gen_answer_object(fbid,query)
@@ -411,54 +447,16 @@ def post_facebook_message(fbid,message_text):
       print result
 
       output_text= response['result']['fulfillment']['speech']
-      print(u"< %s" % output_text)     
-
+      print(u"< %s" % output_text) 
+      response_msg=json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
     
-    # response_msg= {
-    #     "recipient":{
-    #         "id":fbid
-    #       },
-    #       "message":{
-    #         "attachment":{
-    #           "type":"template",
-    #           "payload":{
-    #             "template_type":"generic",
-    #             "elements":[
-    #                {
-    #                 "title":"Welcome to Peter\'s Hats",
-    #                 "image_url":"https://petersfancybrownhats.com/company_image.png",
-    #                 "subtitle":"We\'ve got the right hat for everyone.",
-    #                 "default_action": {
-    #                   "type": "web_url",
-    #                   "url": "https://peterssendreceiveapp.ngrok.io/view?item=103",
-    #                   "messenger_extensions": True,
-    #                   "webview_height_ratio": "tall",
-    #                   "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-    #                 },
-    #                 "buttons":[
-    #                   {
-    #                     "type":"web_url",
-    #                     "url":"https://petersfancybrownhats.com",
-    #                     "title":"View Website"
-    #                   },{
-    #                     "type":"postback",
-    #                     "title":"Start Chatting",
-    #                     "payload":"DEVELOPER_DEFINED_PAYLOAD"
-    #                   }              
-    #                 ]      
-    #               }
-    #             ]
-    #           }
-    #         }
-    #       }
-    # }
-    response_msg=json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
     # response_msg_1={"message": {"attachment": {"type": "template", "payload": {"template_type": "generic", "elements": [{"buttons": [{"url": "http://codingblocks.com/", "type": "web_url", "title": "Open"}, {"type": "element_share"}], "subtitle": "...", "item_url": "http://codingblocks.com/", "image_url": "http://codingblocks.com/wp-content/uploads/2015/12/Team_manmohan-150x150.png", "title": "Manhoman Gupta"}, {"buttons": [{"url": "http://codingblocks.com/", "type": "web_url", "title": "Open"}, {"type": "element_share"}], "subtitle": "...", "item_url": "http://codingblocks.com/", "image_url": "http://codingblocks.com/wp-content/uploads/2015/12/Team_anushray-150x150.png", "title": "Anushray Gupta"}]}}}, "recipient": {"id": "1129928563722136"}}  
-    print response_msg
+    # print response_msg
  
-    requests.post(post_message_url, 
+    status = requests.post(post_message_url, 
                     headers={"Content-Type": "application/json"},
                     data=response_msg)
+    return status
 
 
 def handle_postback(fbid,payload):
