@@ -136,6 +136,7 @@ def index(request):
     # gen_answer_object('1129928563722136',keyword='index error')
     #domain_whitelist()
     #domain_whitelist_2()
+    status= handle_postback('1129928563722136','MENU_CALL')
     status= handle_postback('1129928563722136','MENU_CHAPTER')
 
     # post_facebook_message('1129928563722136','members')
@@ -437,6 +438,7 @@ def post_facebook_message(fbid,message_text):
         response_msg=json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
     elif message_text == 'call':
         output_text= 'http://ieeensit.org'
+        response_msg=json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
     elif message_text=="get_started":
       output_text="Welcome to IEEE NSIT Bot! \n Send us your query or see Menu for Help"
       response_msg=json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
@@ -475,7 +477,7 @@ def handle_postback(fbid,payload):
     if payload == "GET_STARTED_PAYLOAD":
       print "get started"
       return post_facebook_message(fbid,'get_started')
-    if payload == 'MENU_ABOUT':
+    elif payload == 'MENU_ABOUT':
         return post_facebook_message(fbid,'about')
     elif payload == 'MENU_MEMBER':
         return post_facebook_message(fbid,'members')
