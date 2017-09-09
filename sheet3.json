@@ -1,601 +1,528 @@
 {
-"encoding":
-"UTF-8",
-"feed":
-{
-"author":
-[
-{
-"email":
-{
-"$t":
-"kartikaggarwal98@gmail.com"
-},
-"name":
-{
-"$t":
-"kartikaggarwal98"
-}
-}
-],
-"category":
-[
-{
-"scheme":
-"http://schemas.google.com/spreadsheets/2006",
-"term":
-"http://schemas.google.com/spreadsheets/2006#list"
-}
-],
-"entry":
-[
-{
-"category":
-[
-{
-"scheme":
-"http://schemas.google.com/spreadsheets/2006",
-"term":
-"http://schemas.google.com/spreadsheets/2006#list"
-}
-],
-"content":
-{
-"$t":
-"itempicture: http://codingblocks.com/wp-content/uploads/2016/09/lpn-1000x800.jpg, itemlink: https://shubhamieee-yuganshchokra.c9users.io, itemdescription: Looking for an amalgamation of technology blended with a plethora of innovative ideas; then greetings monsieur your search has ended- this is the IEEE Computer Society. Of the 38 technical societies organized under the IEEE, the Computer Society is the largest and one of the most prominent one., itemtype: chapter",
-"type":
-"text"
-},
-"gsx$itemdescription":
-{
-"$t":
-"Looking for an amalgamation of technology blended with a plethora of innovative ideas; then greetings monsieur your search has ended- this is the IEEE Computer Society. Of the 38 technical societies organized under the IEEE, the Computer Society is the largest and one of the most prominent one."
-},
-"gsx$itemlink":
-{
-"$t":
-"https://shubhamieee-yuganshchokra.c9users.io"
-},
-"gsx$itemname":
-{
-"$t":
-"NSIT CS-CHAPTER"
-},
-"gsx$itempicture":
-{
-"$t":
-"http://codingblocks.com/wp-content/uploads/2016/09/lpn-1000x800.jpg"
-},
-"gsx$itemtype":
-{
-"$t":
-"chapter"
-},
-"id":
-{
-"$t":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/cokwr"
-},
-"link":
-[
-{
-"href":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/cokwr",
-"rel":
-"self",
-"type":
-"application/atom+xml"
-}
-],
-"title":
-{
-"$t":
-"NSIT CS-CHAPTER",
-"type":
-"text"
-},
-"updated":
-{
-"$t":
-"2017-09-09T05:05:32.166Z"
-}
-},
-{
-"category":
-[
-{
-"scheme":
-"http://schemas.google.com/spreadsheets/2006",
-"term":
-"http://schemas.google.com/spreadsheets/2006#list"
-}
-],
-"content":
-{
-"$t":
-"itempicture: http://codingblocks.com/wp-content/uploads/2016/09/django-1000x800.jpg, itemlink: https://shubhamieee-yuganshchokra.c9users.io, itemdescription: IEEE Women in Engineering (WIE) is the largest international professional organization dedicated to promoting women engineers and scientists and inspiring girls around the world to follow their academic interests to a career in engineering. India viewed as a potential powerhouse of innovations, is no exception., itemtype: chapter",
-"type":
-"text"
-},
-"gsx$itemdescription":
-{
-"$t":
-"IEEE Women in Engineering (WIE) is the largest international professional organization dedicated to promoting women engineers and scientists and inspiring girls around the world to follow their academic interests to a career in engineering. India viewed as a potential powerhouse of innovations, is no exception."
-},
-"gsx$itemlink":
-{
-"$t":
-"https://shubhamieee-yuganshchokra.c9users.io"
-},
-"gsx$itemname":
-{
-"$t":
-"NSIT WIE CHAPTER\n\n"
-},
-"gsx$itempicture":
-{
-"$t":
-"http://codingblocks.com/wp-content/uploads/2016/09/django-1000x800.jpg"
-},
-"gsx$itemtype":
-{
-"$t":
-"chapter"
-},
-"id":
-{
-"$t":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/cpzh4"
-},
-"link":
-[
-{
-"href":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/cpzh4",
-"rel":
-"self",
-"type":
-"application/atom+xml"
-}
-],
-"title":
-{
-"$t":
-"NSIT WIE CHAPTER\n\n",
-"type":
-"text"
-},
-"updated":
-{
-"$t":
-"2017-09-09T05:05:32.166Z"
-}
-},
-{
-"category":
-[
-{
-"scheme":
-"http://schemas.google.com/spreadsheets/2006",
-"term":
-"http://schemas.google.com/spreadsheets/2006#list"
-}
-],
-"content":
-{
-"$t":
-"itempicture: https://lh3.googleusercontent.com/fIkOlDKsZ93f-N8fzDAJ5L-iNnkgnATYAtL16xCm5sFA9EeVcDtOSJgHPJNb1Hc8_bN-Dr7bCpReDl0\u003dw640-h638, itemlink: https://shubhamieee-yuganshchokra.c9users.io, itemdescription: Teacher in charge, itemtype: members",
-"type":
-"text"
-},
-"gsx$itemdescription":
-{
-"$t":
-"Teacher in charge"
-},
-"gsx$itemlink":
-{
-"$t":
-"https://shubhamieee-yuganshchokra.c9users.io"
-},
-"gsx$itemname":
-{
-"$t":
-"Prerna Gaur"
-},
-"gsx$itempicture":
-{
-"$t":
-"https://lh3.googleusercontent.com/fIkOlDKsZ93f-N8fzDAJ5L-iNnkgnATYAtL16xCm5sFA9EeVcDtOSJgHPJNb1Hc8_bN-Dr7bCpReDl0\u003dw640-h638"
-},
-"gsx$itemtype":
-{
-"$t":
-"members"
-},
-"id":
-{
-"$t":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/cre1l"
-},
-"link":
-[
-{
-"href":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/cre1l",
-"rel":
-"self",
-"type":
-"application/atom+xml"
-}
-],
-"title":
-{
-"$t":
-"Prerna Gaur",
-"type":
-"text"
-},
-"updated":
-{
-"$t":
-"2017-09-09T05:05:32.166Z"
-}
-},
-{
-"category":
-[
-{
-"scheme":
-"http://schemas.google.com/spreadsheets/2006",
-"term":
-"http://schemas.google.com/spreadsheets/2006#list"
-}
-],
-"content":
-{
-"$t":
-"itempicture: https://lh5.googleusercontent.com/OUSRiQ8wXguUo0N9CP3bGKn86-Z2tHsu-KkF7dyyLla-qeSB0Tzv8AU_Ggnhuj6JCHCff4cN\u003dw639-h638, itemlink: https://shubhamieee-yuganshchokra.c9users.io, itemdescription: Chairperson, itemtype: members",
-"type":
-"text"
-},
-"gsx$itemdescription":
-{
-"$t":
-"Chairperson"
-},
-"gsx$itemlink":
-{
-"$t":
-"https://shubhamieee-yuganshchokra.c9users.io"
-},
-"gsx$itemname":
-{
-"$t":
-"Shubham Bhargava"
-},
-"gsx$itempicture":
-{
-"$t":
-"https://lh5.googleusercontent.com/OUSRiQ8wXguUo0N9CP3bGKn86-Z2tHsu-KkF7dyyLla-qeSB0Tzv8AU_Ggnhuj6JCHCff4cN\u003dw639-h638"
-},
-"gsx$itemtype":
-{
-"$t":
-"members"
-},
-"id":
-{
-"$t":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/chk2m"
-},
-"link":
-[
-{
-"href":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/chk2m",
-"rel":
-"self",
-"type":
-"application/atom+xml"
-}
-],
-"title":
-{
-"$t":
-"Shubham Bhargava",
-"type":
-"text"
-},
-"updated":
-{
-"$t":
-"2017-09-09T05:05:32.166Z"
-}
-},
-{
-"category":
-[
-{
-"scheme":
-"http://schemas.google.com/spreadsheets/2006",
-"term":
-"http://schemas.google.com/spreadsheets/2006#list"
-}
-],
-"content":
-{
-"$t":
-"itempicture: https://lh4.googleusercontent.com/Avlo53r4jzntm5upUdkHMdYjy-gIdNO3w23l_j9qIj2Vzjz6NhdeFsF7pNhKgNxl545PlX8Kdmx3hkk\u003dw640-h638, itemlink: https://shubhamieee-yuganshchokra.c9users.io, itemdescription: General Secretary, itemtype: members",
-"type":
-"text"
-},
-"gsx$itemdescription":
-{
-"$t":
-"General Secretary"
-},
-"gsx$itemlink":
-{
-"$t":
-"https://shubhamieee-yuganshchokra.c9users.io"
-},
-"gsx$itemname":
-{
-"$t":
-"Simran Bedi"
-},
-"gsx$itempicture":
-{
-"$t":
-"https://lh4.googleusercontent.com/Avlo53r4jzntm5upUdkHMdYjy-gIdNO3w23l_j9qIj2Vzjz6NhdeFsF7pNhKgNxl545PlX8Kdmx3hkk\u003dw640-h638"
-},
-"gsx$itemtype":
-{
-"$t":
-"members"
-},
-"id":
-{
-"$t":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/ciyn3"
-},
-"link":
-[
-{
-"href":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/ciyn3",
-"rel":
-"self",
-"type":
-"application/atom+xml"
-}
-],
-"title":
-{
-"$t":
-"Simran Bedi",
-"type":
-"text"
-},
-"updated":
-{
-"$t":
-"2017-09-09T05:05:32.166Z"
-}
-},
-{
-"category":
-[
-{
-"scheme":
-"http://schemas.google.com/spreadsheets/2006",
-"term":
-"http://schemas.google.com/spreadsheets/2006#list"
-}
-],
-"content":
-{
-"$t":
-"itempicture: http://codingblocks.com/wp-content/uploads/2015/12/why2-122x122.png, itemlink: https://shubhamieee-yuganshchokra.c9users.io, itemdescription: ..., itemtype: why",
-"type":
-"text"
-},
-"gsx$itemdescription":
-{
-"$t":
-"..."
-},
-"gsx$itemlink":
-{
-"$t":
-"https://shubhamieee-yuganshchokra.c9users.io"
-},
-"gsx$itemname":
-{
-"$t":
-"hands on experience"
-},
-"gsx$itempicture":
-{
-"$t":
-"http://codingblocks.com/wp-content/uploads/2015/12/why2-122x122.png"
-},
-"gsx$itemtype":
-{
-"$t":
-"why"
-},
-"id":
-{
-"$t":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/ckd7g"
-},
-"link":
-[
-{
-"href":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/ckd7g",
-"rel":
-"self",
-"type":
-"application/atom+xml"
-}
-],
-"title":
-{
-"$t":
-"hands on experience",
-"type":
-"text"
-},
-"updated":
-{
-"$t":
-"2017-09-09T05:05:32.166Z"
-}
-},
-{
-"category":
-[
-{
-"scheme":
-"http://schemas.google.com/spreadsheets/2006",
-"term":
-"http://schemas.google.com/spreadsheets/2006#list"
-}
-],
-"content":
-{
-"$t":
-"itempicture: http://codingblocks.com/wp-content/uploads/2015/12/why1-122x122.png, itemlink: https://shubhamieee-yuganshchokra.c9users.io, itemdescription: ..., itemtype: why",
-"type":
-"text"
-},
-"gsx$itemdescription":
-{
-"$t":
-"..."
-},
-"gsx$itemlink":
-{
-"$t":
-"https://shubhamieee-yuganshchokra.c9users.io"
-},
-"gsx$itemname":
-{
-"$t":
-"professionals"
-},
-"gsx$itempicture":
-{
-"$t":
-"http://codingblocks.com/wp-content/uploads/2015/12/why1-122x122.png"
-},
-"gsx$itemtype":
-{
-"$t":
-"why"
-},
-"id":
-{
-"$t":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/clrrx"
-},
-"link":
-[
-{
-"href":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/clrrx",
-"rel":
-"self",
-"type":
-"application/atom+xml"
-}
-],
-"title":
-{
-"$t":
-"professionals",
-"type":
-"text"
-},
-"updated":
-{
-"$t":
-"2017-09-09T05:05:32.166Z"
-}
-}
-],
-"id":
-{
-"$t":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values"
-},
-"link":
-[
-{
-"href":
-"https://docs.google.com/spreadsheets/d/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/pubhtml",
-"rel":
-"alternate",
-"type":
-"application/atom+xml"
-},
-{
-"href":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values",
-"rel":
-"http://schemas.google.com/g/2005#feed",
-"type":
-"application/atom+xml"
-},
-{
-"href":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values",
-"rel":
-"http://schemas.google.com/g/2005#post",
-"type":
-"application/atom+xml"
-},
-{
-"href":
-"https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values?alt\u003djson",
-"rel":
-"self",
-"type":
-"application/atom+xml"
-}
-],
-"openSearch$startIndex":
-{
-"$t":
-"1"
-},
-"openSearch$totalResults":
-{
-"$t":
-"7"
-},
-"title":
-{
-"$t":
-"Sheet1",
-"type":
-"text"
-},
-"updated":
-{
-"$t":
-"2017-09-09T05:05:32.166Z"
-},
-"xmlns":
-"http://www.w3.org/2005/Atom",
-"xmlns$gsx":
-"http://schemas.google.com/spreadsheets/2006/extended",
-"xmlns$openSearch":
-"http://a9.com/-/spec/opensearchrss/1.0/"
-},
-"version":
-"1.0"
+    "encoding": "UTF-8",
+    "feed":
+    {
+        "author": [
+        {
+            "email":
+            {
+                "$t": "kartikaggarwal98@gmail.com"
+            },
+            "name":
+            {
+                "$t": "kartikaggarwal98"
+            }
+        }],
+        "category": [
+        {
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#list"
+        }],
+        "entry": [
+        {
+            "category": [
+            {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "content":
+            {
+                "$t": "itempicture: http://codingblocks.com/wp-content/uploads/2016/09/lpn-1000x800.jpg, itemlink: https://shubhamieee-yuganshchokra.c9users.io, itemdescription: Looking for an amalgamation of technology blended with a plethora of innovative ideas; then greetings monsieur your search has ended- this is the IEEE Computer Society. Of the 38 technical societies organized under the IEEE, the Computer Society is the largest and one of the most prominent one., itemtype: chapter",
+                "type": "text"
+            },
+            "gsx$itemdescription":
+            {
+                "$t": "Looking for an amalgamation of technology blended with a plethora of innovative ideas; then greetings monsieur your search has ended- this is the IEEE Computer Society. Of the 38 technical societies organized under the IEEE, the Computer Society is the largest and one of the most prominent one."
+            },
+            "gsx$itemlink":
+            {
+                "$t": "https://shubhamieee-yuganshchokra.c9users.io"
+            },
+            "gsx$itemname":
+            {
+                "$t": "NSIT CS-CHAPTER"
+            },
+            "gsx$itempicture":
+            {
+                "$t": "http://codingblocks.com/wp-content/uploads/2016/09/lpn-1000x800.jpg"
+            },
+            "gsx$itemtype":
+            {
+                "$t": "chapter"
+            },
+            "id":
+            {
+                "$t": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/cokwr"
+            },
+            "link": [
+            {
+                "href": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/cokwr",
+                "rel": "self",
+                "type": "application/atom+xml"
+            }],
+            "title":
+            {
+                "$t": "NSIT CS-CHAPTER",
+                "type": "text"
+            },
+            "updated":
+            {
+                "$t": "2017-09-09T05:37:34.254Z"
+            }
+        },
+        {
+            "category": [
+            {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "content":
+            {
+                "$t": "itempicture: http://codingblocks.com/wp-content/uploads/2016/09/django-1000x800.jpg, itemlink: https://shubhamieee-yuganshchokra.c9users.io, itemdescription: IEEE Women in Engineering (WIE) is the largest international professional organization dedicated to promoting women engineers and scientists and inspiring girls around the world to follow their academic interests to a career in engineering. India viewed as a potential powerhouse of innovations, is no exception., itemtype: chapter",
+                "type": "text"
+            },
+            "gsx$itemdescription":
+            {
+                "$t": "IEEE Women in Engineering (WIE) is the largest international professional organization dedicated to promoting women engineers and scientists and inspiring girls around the world to follow their academic interests to a career in engineering. India viewed as a potential powerhouse of innovations, is no exception."
+            },
+            "gsx$itemlink":
+            {
+                "$t": "https://shubhamieee-yuganshchokra.c9users.io"
+            },
+            "gsx$itemname":
+            {
+                "$t": "NSIT WIE CHAPTER\n\n"
+            },
+            "gsx$itempicture":
+            {
+                "$t": "http://codingblocks.com/wp-content/uploads/2016/09/django-1000x800.jpg"
+            },
+            "gsx$itemtype":
+            {
+                "$t": "chapter"
+            },
+            "id":
+            {
+                "$t": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/cpzh4"
+            },
+            "link": [
+            {
+                "href": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/cpzh4",
+                "rel": "self",
+                "type": "application/atom+xml"
+            }],
+            "title":
+            {
+                "$t": "NSIT WIE CHAPTER\n\n",
+                "type": "text"
+            },
+            "updated":
+            {
+                "$t": "2017-09-09T05:37:34.254Z"
+            }
+        },
+        {
+            "category": [
+            {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "content":
+            {
+                "$t": "itempicture: https://lh3.googleusercontent.com/fIkOlDKsZ93f-N8fzDAJ5L-iNnkgnATYAtL16xCm5sFA9EeVcDtOSJgHPJNb1Hc8_bN-Dr7bCpReDl0\u003dw640-h638, itemlink: https://shubhamieee-yuganshchokra.c9users.io, itemdescription: Teacher in charge, itemtype: members",
+                "type": "text"
+            },
+            "gsx$itemdescription":
+            {
+                "$t": "Teacher in charge"
+            },
+            "gsx$itemlink":
+            {
+                "$t": "https://shubhamieee-yuganshchokra.c9users.io"
+            },
+            "gsx$itemname":
+            {
+                "$t": "Prerna Gaur"
+            },
+            "gsx$itempicture":
+            {
+                "$t": "https://lh3.googleusercontent.com/fIkOlDKsZ93f-N8fzDAJ5L-iNnkgnATYAtL16xCm5sFA9EeVcDtOSJgHPJNb1Hc8_bN-Dr7bCpReDl0\u003dw640-h638"
+            },
+            "gsx$itemtype":
+            {
+                "$t": "members"
+            },
+            "id":
+            {
+                "$t": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/cre1l"
+            },
+            "link": [
+            {
+                "href": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/cre1l",
+                "rel": "self",
+                "type": "application/atom+xml"
+            }],
+            "title":
+            {
+                "$t": "Prerna Gaur",
+                "type": "text"
+            },
+            "updated":
+            {
+                "$t": "2017-09-09T05:37:34.254Z"
+            }
+        },
+        {
+            "category": [
+            {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "content":
+            {
+                "$t": "itempicture: https://lh5.googleusercontent.com/OUSRiQ8wXguUo0N9CP3bGKn86-Z2tHsu-KkF7dyyLla-qeSB0Tzv8AU_Ggnhuj6JCHCff4cN\u003dw639-h638, itemlink: https://shubhamieee-yuganshchokra.c9users.io, itemdescription: Chairperson, itemtype: members",
+                "type": "text"
+            },
+            "gsx$itemdescription":
+            {
+                "$t": "Chairperson"
+            },
+            "gsx$itemlink":
+            {
+                "$t": "https://shubhamieee-yuganshchokra.c9users.io"
+            },
+            "gsx$itemname":
+            {
+                "$t": "Shubham Bhargava"
+            },
+            "gsx$itempicture":
+            {
+                "$t": "https://lh5.googleusercontent.com/OUSRiQ8wXguUo0N9CP3bGKn86-Z2tHsu-KkF7dyyLla-qeSB0Tzv8AU_Ggnhuj6JCHCff4cN\u003dw639-h638"
+            },
+            "gsx$itemtype":
+            {
+                "$t": "members"
+            },
+            "id":
+            {
+                "$t": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/chk2m"
+            },
+            "link": [
+            {
+                "href": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/chk2m",
+                "rel": "self",
+                "type": "application/atom+xml"
+            }],
+            "title":
+            {
+                "$t": "Shubham Bhargava",
+                "type": "text"
+            },
+            "updated":
+            {
+                "$t": "2017-09-09T05:37:34.254Z"
+            }
+        },
+        {
+            "category": [
+            {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "content":
+            {
+                "$t": "itempicture: https://lh4.googleusercontent.com/Avlo53r4jzntm5upUdkHMdYjy-gIdNO3w23l_j9qIj2Vzjz6NhdeFsF7pNhKgNxl545PlX8Kdmx3hkk\u003dw640-h638, itemlink: https://shubhamieee-yuganshchokra.c9users.io, itemdescription: General Secretary, itemtype: members",
+                "type": "text"
+            },
+            "gsx$itemdescription":
+            {
+                "$t": "General Secretary"
+            },
+            "gsx$itemlink":
+            {
+                "$t": "https://shubhamieee-yuganshchokra.c9users.io"
+            },
+            "gsx$itemname":
+            {
+                "$t": "Simran Bedi"
+            },
+            "gsx$itempicture":
+            {
+                "$t": "https://lh4.googleusercontent.com/Avlo53r4jzntm5upUdkHMdYjy-gIdNO3w23l_j9qIj2Vzjz6NhdeFsF7pNhKgNxl545PlX8Kdmx3hkk\u003dw640-h638"
+            },
+            "gsx$itemtype":
+            {
+                "$t": "members"
+            },
+            "id":
+            {
+                "$t": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/ciyn3"
+            },
+            "link": [
+            {
+                "href": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/ciyn3",
+                "rel": "self",
+                "type": "application/atom+xml"
+            }],
+            "title":
+            {
+                "$t": "Simran Bedi",
+                "type": "text"
+            },
+            "updated":
+            {
+                "$t": "2017-09-09T05:37:34.254Z"
+            }
+        },
+        {
+            "category": [
+            {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "content":
+            {
+                "$t": "",
+                "type": "text"
+            },
+            "gsx$itemdescription":
+            {
+                "$t": "On the 6th of October, IEEE NSIT conducted a Mentorship Program. The main aim of the program was to support students in pursuing their passion and building projects utilizing advanced knowledge and hardware. The talk was also held to make the students aware about GSOC, by NSIT’s own Vaibhav Choudhary, project maker in GSOC 2016."
+            },
+            "gsx$itemlink":
+            {
+                "$t": "https://shubhamieee-yuganshchokra.c9users.io"
+            },
+            "gsx$itemname":
+            {
+                "$t": "Mentorship Programme"
+            },
+            "gsx$itempicture":
+            {
+                "$t": "https://scontent.fdel1-2.fna.fbcdn.net/v/t1.0-1/p200x200/10503_291346104309324_96557331_n.png?oh\u003d400add16edd7398569b4abe57df3d591\u0026oe\u003d5A5475A2"
+            },
+            "gsx$itemtype":
+            {
+                "$t": "event"
+            },
+            "id":
+            {
+                "$t": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/ckd7g"
+            },
+            "link": [
+            {
+                "href": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/ckd7g",
+                "rel": "self",
+                "type": "application/atom+xml"
+            }],
+            "title":
+            {
+                "$t": "Mentorship Programme",
+                "type": "text"
+            },
+            "updated":
+            {
+                "$t": "2017-09-09T05:37:34.254Z"
+            }
+        },
+        {
+            "category": [
+            {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "content":
+            {
+                "$t": "",
+                "type": "text"
+            },
+            "gsx$itemdescription":
+            {
+                "$t": "Under the fresher’s week, IEEE NSIT organized \"Collapsible\", an exciting competition, where the teams were required to construct the ultimate bridge- a blend of elegance, strength and beautiful architectural design using just ice cream sticks and glue. The teams were provided with the materials and given 45 minutes to construct the bridge of specific dimensions. The team whose bridge was able to withstand the maximum load were declared the winners."
+            },
+            "gsx$itemlink":
+            {
+                "$t": "https://shubhamieee-yuganshchokra.c9users.io"
+            },
+            "gsx$itemname":
+            {
+                "$t": "Collapsible"
+            },
+            "gsx$itempicture":
+            {
+                "$t": "https://scontent.fdel1-2.fna.fbcdn.net/v/t1.0-1/p200x200/10503_291346104309324_96557331_n.png?oh\u003d400add16edd7398569b4abe57df3d591\u0026oe\u003d5A5475A2"
+            },
+            "gsx$itemtype":
+            {
+                "$t": "event"
+            },
+            "id":
+            {
+                "$t": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/clrrx"
+            },
+            "link": [
+            {
+                "href": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/clrrx",
+                "rel": "self",
+                "type": "application/atom+xml"
+            }],
+            "title":
+            {
+                "$t": "Collapsible",
+                "type": "text"
+            },
+            "updated":
+            {
+                "$t": "2017-09-09T05:37:34.254Z"
+            }
+        },
+        {
+            "category": [
+            {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "content":
+            {
+                "$t": "",
+                "type": "text"
+            },
+            "gsx$itemdescription":
+            {
+                "$t": "IEEE NSIT organized the Ideation Contest on the 21st of October. Many participants, from colleges all across Delhi competed. The participants were provided with problem statements comprising of topics related to encouraging women in engineering, and at the end, had to provide a presentation giving ideas for the same. The best team was awarded, and all teams were bestowed with participation certificates."
+            },
+            "gsx$itemlink":
+            {
+                "$t": "https://shubhamieee-yuganshchokra.c9users.io"
+            },
+            "gsx$itemname":
+            {
+                "$t": "Ideathon Contest"
+            },
+            "gsx$itempicture":
+            {
+                "$t": "https://scontent.fdel1-2.fna.fbcdn.net/v/t1.0-1/p200x200/10503_291346104309324_96557331_n.png?oh\u003d400add16edd7398569b4abe57df3d591\u0026oe\u003d5A5475A2"
+            },
+            "gsx$itemtype":
+            {
+                "$t": "event"
+            },
+            "id":
+            {
+                "$t": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/cyevm"
+            },
+            "link": [
+            {
+                "href": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/cyevm",
+                "rel": "self",
+                "type": "application/atom+xml"
+            }],
+            "title":
+            {
+                "$t": "Ideathon Contest",
+                "type": "text"
+            },
+            "updated":
+            {
+                "$t": "2017-09-09T05:37:34.254Z"
+            }
+        },
+        {
+            "category": [
+            {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "content":
+            {
+                "$t": "",
+                "type": "text"
+            },
+            "gsx$itemdescription":
+            {
+                "$t": "IEEE NSIT organized a workshop on Game Development in partnership with Coding Blocks on 1st October 2016. This 1-day event focused on the basic concepts of game design. The workshop started from basics and concluded with students developing 2 games each using the tools and libraries provided. This fascinating event will help in boosting practical knowledge of students."
+            },
+            "gsx$itemlink":
+            {
+                "$t": "https://shubhamieee-yuganshchokra.c9users.io"
+            },
+            "gsx$itemname":
+            {
+                "$t": "Game Development"
+            },
+            "gsx$itempicture":
+            {
+                "$t": "https://scontent.fdel1-2.fna.fbcdn.net/v/t1.0-1/p200x200/10503_291346104309324_96557331_n.png?oh\u003d400add16edd7398569b4abe57df3d591\u0026oe\u003d5A5475A2"
+            },
+            "gsx$itemtype":
+            {
+                "$t": "event"
+            },
+            "id":
+            {
+                "$t": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/cztg3"
+            },
+            "link": [
+            {
+                "href": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values/cztg3",
+                "rel": "self",
+                "type": "application/atom+xml"
+            }],
+            "title":
+            {
+                "$t": "Game Development",
+                "type": "text"
+            },
+            "updated":
+            {
+                "$t": "2017-09-09T05:37:34.254Z"
+            }
+        }],
+        "id":
+        {
+            "$t": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values"
+        },
+        "link": [
+        {
+            "href": "https://docs.google.com/spreadsheets/d/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/pubhtml",
+            "rel": "alternate",
+            "type": "application/atom+xml"
+        },
+        {
+            "href": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values",
+            "rel": "http://schemas.google.com/g/2005#feed",
+            "type": "application/atom+xml"
+        },
+        {
+            "href": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values",
+            "rel": "http://schemas.google.com/g/2005#post",
+            "type": "application/atom+xml"
+        },
+        {
+            "href": "https://spreadsheets.google.com/feeds/list/1oHgUnqmGZs_C0oqTwQIUPN0gm54lImC7nA7Vfa7jkjM/od6/public/values?alt\u003djson",
+            "rel": "self",
+            "type": "application/atom+xml"
+        }],
+        "openSearch$startIndex":
+        {
+            "$t": "1"
+        },
+        "openSearch$totalResults":
+        {
+            "$t": "9"
+        },
+        "title":
+        {
+            "$t": "Sheet1",
+            "type": "text"
+        },
+        "updated":
+        {
+            "$t": "2017-09-09T05:37:34.254Z"
+        },
+        "xmlns": "http://www.w3.org/2005/Atom",
+        "xmlns$gsx": "http://schemas.google.com/spreadsheets/2006/extended",
+        "xmlns$openSearch": "http://a9.com/-/spec/opensearchrss/1.0/"
+    },
+    "version": "1.0"
 }

@@ -127,9 +127,8 @@ def set_greeting_text():
 
 def index(request):
     fbid= '1129928563722136'
-    #set_menu()
+    #status= set_menu()
     print "set menu!!!!"
-    post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
     # response_msg= gen_response_object('1129928563722136','members')
 
     #set_greeting_text()
@@ -137,7 +136,7 @@ def index(request):
     # gen_answer_object('1129928563722136',keyword='index error')
     #domain_whitelist()
     #domain_whitelist_2()
-    status= handle_postback('1129928563722136','MENU_MEMBER')
+    status= handle_postback('1129928563722136','MENU_CHAPTER')
 
     # post_facebook_message('1129928563722136','members')
     # search_string = request.GET.get('text') or 'foo'
@@ -222,7 +221,12 @@ def set_menu():
                             {
                               "type":"postback",
                               "title":"Events",
-                              "payload":"MENU_TEACHER"
+                              "payload":"MENU_EVENTS"
+                            },
+                            {
+                              "type":"postback",
+                              "title":"Chapters",
+                              "payload":"MENU_CHAPTER"
                             },
                             {
                               "type":"postback",
@@ -238,6 +242,7 @@ def set_menu():
           data = menu_object)
 
     logg(status.text,'-MENU-OBJECT-')
+    return status
 
 def gen_response_object(fbid,item_type='members'):
     post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
@@ -424,10 +429,14 @@ def post_facebook_message(fbid,message_text):
     post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
     message_text = message_text.lower()
     # save_message(fbid,message_text)
-    if message_text in 'members,course,why'.split(','):
+    if message_text in 'members,event,chapter'.split(','):
         output_text = gen_response_object(fbid,item_type=message_text)
         response_msg= json.dumps(output_text)
-
+    elif message_text == 'about':
+        output_text= 'Started back in 2001, IEEE-DIT has now grown into a multi-faceted chapter, empowering young engineers to enhance their skills and set up milestones in the history of IEEE NSIT. Our foremost objective is to create an environment which promotes students to learn technical knowledge, inculcate managerial skills and develop their overall personalities. We achieve this by sponsoring technical projects, providing opportunities to manage and organize events and to participate in various events and conferences at state as well as national level.'
+        response_msg=json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
+    elif message_text == 'call':
+        output_text= 'http://ieeensit.org'
     elif message_text=="get_started":
       output_text="Welcome to IEEE NSIT Bot! \n Send us your query or see Menu for Help"
       response_msg=json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
@@ -470,6 +479,10 @@ def handle_postback(fbid,payload):
         return post_facebook_message(fbid,'about')
     elif payload == 'MENU_MEMBER':
         return post_facebook_message(fbid,'members')
+    elif payload == 'MENU_CHAPTER':
+        return post_facebook_message(fbid,'chapter')
+    elif payload=='MENU_EVENTS':
+        return post_facebook_message(fbid,'event')
     elif payload == 'MENU_WHY':
         response_object = {
                         "recipient":{
@@ -502,31 +515,7 @@ def handle_postback(fbid,payload):
         status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
     
     elif payload == 'MENU_CALL':
-
-        response_object =   {
-                              "recipient":{
-                                "id":fbid
-                              },
-                              "message":{
-                                "attachment":{
-                                  "type":"template",
-                                  "payload":{
-                                    "template_type":"button",
-                                    "text":"Need further assistance? Talk to one of our representative",
-                                    "buttons":[
-                                      {
-                                                "type":"phone_number",
-                                                "title":"Call Us",
-                                                "payload":"+919599586446"
-                                      }
-                                    ]
-                                  }
-                                }
-                              }
-                            }
-        response_msg = json.dumps(response_object)
-        requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
-    
+        return post_facebook_message(fbid,'call')    
 
     #return
 
