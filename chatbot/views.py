@@ -128,11 +128,13 @@ def set_greeting_text():
 def index(request):
     #set_menu()
     print "set menu!!!!"
-    spreadsheet_object = scrape_spreadsheet()
-    print spreadsheet_object
-    item_arr = [i for i in spreadsheet_object if i['itemtype'] == 'members']
-    print item_arr
-    gen_response_object('1129928563722136','members')
+    post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
+
+    # spreadsheet_object = scrape_spreadsheet()
+    # print spreadsheet_object
+    # item_arr = [i for i in spreadsheet_object if i['itemtype'] == 'members']
+    # print item_arr
+    output_text= gen_response_object('1129928563722136','about')
 
     #set_greeting_text()
     #get_started_button()
@@ -140,12 +142,16 @@ def index(request):
     # gen_answer_object('1129928563722136',keyword='index error')
     # domain_whitelist()
     # domain_whitelist_2()
-    # handle_postback('fbid','MENU_CALL')
-    post_facebook_message('1129928563722136','hi')
+    # output_text= handle_postback('1129928563722136','MENU_MEMBER')
+
+    #post_facebook_message('1129928563722136','hi')
     # post_facebook_message('1129928563722136','asdasd')
     # search_string = request.GET.get('text') or 'foo'
     # output_text = gen_response_object('fbid',item_type='members')
-    # return HttpResponse(output_text, content_type='application/json')
+    requests.post(post_message_url, 
+                    headers={"Content-Type": "application/json"},
+                    data=output_text)
+    return HttpResponse(output_text, content_type='application/json')
 
 def get_started_button():
   post_message_url = 'https://graph.facebook.com/v2.6/me/thread_settings?access_token=%s'%PAGE_ACCESS_TOKEN
@@ -176,7 +182,7 @@ def set_menu():
                             {
                               "type":"postback",
                               "title":"Members",
-                              "payload":"MENU_COURSE"
+                              "payload":"MENU_MEMBER"
                             },
                             {
                               "type":"postback",
@@ -199,11 +205,14 @@ def set_menu():
     logg(status.text,'-MENU-OBJECT-')
 
 def gen_response_object(fbid,item_type='members'):
+    post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
+
     spreadsheet_object = scrape_spreadsheet()
     item_arr = [i for i in spreadsheet_object if i['itemtype'] == item_type]
     elements_arr = []
 
     for i in item_arr:
+        #print i
         sub_item = {
                         "title":i['itemname'],
                         "item_url":i['itemlink'],
@@ -237,8 +246,12 @@ def gen_response_object(fbid,item_type='members'):
                 }
               }
             }
-
-    return json.dumps(response_object)
+    print response_object
+    # requests.post(post_message_url, 
+    #                 headers={"Content-Type": "application/json"},
+    #                 data=response_object)
+    print "Done"
+    return response_object
 
 def gen_response_object_1(fbid,item_type='members'):
     spreadsheet_object = scrape_spreadsheet()
@@ -379,7 +392,7 @@ def post_facebook_message(fbid,message_text):
     post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
     message_text = message_text.lower()
     # save_message(fbid,message_text)
-    if message_text in 'members,about,events'.split(','):
+    if message_text in 'members,course,why'.split(','):
         output_text = gen_response_object(fbid,item_type=message_text)
     elif message_text=="get_started":
       output_text="Welcome to IEEE NSIT Bot! \n Send us your query or see Menu for Help"
@@ -442,11 +455,7 @@ def post_facebook_message(fbid,message_text):
     response_msg=json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
     # response_msg_1={"message": {"attachment": {"type": "template", "payload": {"template_type": "generic", "elements": [{"buttons": [{"url": "http://codingblocks.com/", "type": "web_url", "title": "Open"}, {"type": "element_share"}], "subtitle": "...", "item_url": "http://codingblocks.com/", "image_url": "http://codingblocks.com/wp-content/uploads/2015/12/Team_manmohan-150x150.png", "title": "Manhoman Gupta"}, {"buttons": [{"url": "http://codingblocks.com/", "type": "web_url", "title": "Open"}, {"type": "element_share"}], "subtitle": "...", "item_url": "http://codingblocks.com/", "image_url": "http://codingblocks.com/wp-content/uploads/2015/12/Team_anushray-150x150.png", "title": "Anushray Gupta"}]}}}, "recipient": {"id": "1129928563722136"}}  
     print response_msg
-    # print "###########"
-    # print response_msg==response_msg_1
-    # print "###########"
-    # print response_msg_1
-
+ 
     requests.post(post_message_url, 
                     headers={"Content-Type": "application/json"},
                     data=response_msg)
@@ -490,7 +499,7 @@ def handle_postback(fbid,payload):
         requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
         
     elif payload == "MENU_HELP":
-        output_text = 'This is IEEE NSIT'
+        output_text = 'This is IEEE NSIT. Started back in 2001, IEEE-DIT has now grown into a multi-faceted chapter, empowering young engineers to enhance their skills and set up milestones in the history of IEEE NSIT. Our foremost objective is to create an environment which promotes students to learn technical knowledge, inculcate managerial skills and develop their overall personalities.'
         response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":output_text}})
         status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
     
