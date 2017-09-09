@@ -27,7 +27,7 @@
             }],
             "content":
             {
-                "$t": "itempicture: https://scontent.fdel1-2.fna.fbcdn.net/v/t1.0-1/p200x200/10503_291346104309324_96557331_n.png?oh=400add16edd7398569b4abe57df3d591&oe=5A5475A2, itemlink: https://shubhamieee-yuganshchokra.c9users.io, itemdescription: Looking for an amalgamation of technology blended with a plethora of innovative ideas; then greetings monsieur your search has ended- this is the IEEE Computer Society. Of the 38 technical societies organized under the IEEE, the Computer Society is the largest and one of the most prominent one., itemtype: chapter",
+                "$t": "",
                 "type": "text"
             },
             "gsx$itemdescription":
@@ -44,7 +44,7 @@
             },
             "gsx$itempicture":
             {
-                "$t": "https://scontent.fdel1-2.fna.fbcdn.net/v/t1.0-1/p200x200/10503_291346104309324_96557331_n.png?oh=400add16edd7398569b4abe57df3d591&oe=5A5475A2"
+                "$t": "https://scontent.fdel1-2.fna.fbcdn.net/v/t1.0-1/p200x200/10503_291346104309324_96557331_n.png?oh\u003d400add16edd7398569b4abe57df3d591\u0026oe\u003d5A5475A2"
             },
             "gsx$itemtype":
             {
@@ -67,7 +67,7 @@
             },
             "updated":
             {
-                "$t": "2017-09-09T05:37:34.254Z"
+                "$t": "2017-09-09T05:51:19.630Z"
             }
         },
         {
@@ -78,7 +78,7 @@
             }],
             "content":
             {
-                "$t": "itempicture: https://scontent.fdel1-2.fna.fbcdn.net/v/t1.0-1/p200x200/10503_291346104309324_96557331_n.png?oh=400add16edd7398569b4abe57df3d591&oe=5A5475A2, itemlink: https://shubhamieee-yuganshchokra.c9users.io, itemdescription: IEEE Women in Engineering (WIE) is the largest international professional organization dedicated to promoting women engineers and scientists and inspiring girls around the world to follow their academic interests to a career in engineering. India viewed as a potential powerhouse of innovations, is no exception., itemtype: chapter",
+                "$t": "",
                 "type": "text"
             },
             "gsx$itemdescription":
@@ -95,7 +95,7 @@
             },
             "gsx$itempicture":
             {
-                "$t": "https://scontent.fdel1-2.fna.fbcdn.net/v/t1.0-1/p200x200/10503_291346104309324_96557331_n.png?oh=400add16edd7398569b4abe57df3d591&oe=5A5475A2"
+                "$t": "https://scontent.fdel1-2.fna.fbcdn.net/v/t1.0-1/p200x200/10503_291346104309324_96557331_n.png?oh\u003d400add16edd7398569b4abe57df3d591\u0026oe\u003d5A5475A2"
             },
             "gsx$itemtype":
             {
@@ -118,7 +118,7 @@
             },
             "updated":
             {
-                "$t": "2017-09-09T05:37:34.254Z"
+                "$t": "2017-09-09T05:51:19.630Z"
             }
         },
         {
@@ -169,7 +169,7 @@
             },
             "updated":
             {
-                "$t": "2017-09-09T05:37:34.254Z"
+                "$t": "2017-09-09T05:51:19.630Z"
             }
         },
         {
@@ -220,7 +220,7 @@
             },
             "updated":
             {
-                "$t": "2017-09-09T05:37:34.254Z"
+                "$t": "2017-09-09T05:51:19.630Z"
             }
         },
         {
@@ -271,7 +271,7 @@
             },
             "updated":
             {
-                "$t": "2017-09-09T05:37:34.254Z"
+                "$t": "2017-09-09T05:51:19.630Z"
             }
         },
         {
@@ -322,7 +322,7 @@
             },
             "updated":
             {
-                "$t": "2017-09-09T05:37:34.254Z"
+                "$t": "2017-09-09T05:51:19.630Z"
             }
         },
         {
@@ -373,7 +373,7 @@
             },
             "updated":
             {
-                "$t": "2017-09-09T05:37:34.254Z"
+                "$t": "2017-09-09T05:51:19.630Z"
             }
         },
         {
@@ -424,7 +424,7 @@
             },
             "updated":
             {
-                "$t": "2017-09-09T05:37:34.254Z"
+                "$t": "2017-09-09T05:51:19.630Z"
             }
         },
         {
@@ -475,7 +475,7 @@
             },
             "updated":
             {
-                "$t": "2017-09-09T05:37:34.254Z"
+                "$t": "2017-09-09T05:51:19.630Z"
             }
         }],
         "id":
@@ -518,7 +518,7 @@
         },
         "updated":
         {
-            "$t": "2017-09-09T05:37:34.254Z"
+            "$t": "2017-09-09T05:51:19.630Z"
         },
         "xmlns": "http://www.w3.org/2005/Atom",
         "xmlns$gsx": "http://schemas.google.com/spreadsheets/2006/extended",

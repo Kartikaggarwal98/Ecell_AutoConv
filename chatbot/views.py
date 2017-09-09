@@ -136,8 +136,7 @@ def index(request):
     # gen_answer_object('1129928563722136',keyword='index error')
     #domain_whitelist()
     #domain_whitelist_2()
-    status= handle_postback('1129928563722136','MENU_CALL')
-    status= handle_postback('1129928563722136','MENU_CHAPTER')
+    status= handle_postback('1129928563722136','MENU_MEMBER')
 
     # post_facebook_message('1129928563722136','members')
     # search_string = request.GET.get('text') or 'foo'
